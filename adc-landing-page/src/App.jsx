@@ -1,11 +1,13 @@
 import { useEffect } from "react";
-import "./App.css";
-
 import { LocalizationProvider, useLocalization } from "./helpers/localization";
+import styled from "styled-components";
 
 // Blocks
 import Header from "./components/blocks/Header";
 import Main from "./components/blocks/Main";
+import Features from "./components/blocks/Features";
+import About from "./components/blocks/About";
+import History from "./components/blocks/History";
 
 function App() {
   const { setLocale } = useLocalization();
@@ -15,14 +17,29 @@ function App() {
   }, [setLocale]);
 
   return (
-    <div className="app">
+    <AppContainer className="app">
       <Header />
+      <Main />
       <main>
-        <Main />
+        <Features />
+        <About />
+        <History />
       </main>
-    </div>
+    </AppContainer>
   );
 }
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 50px 150px;
+    gap: 150px;
+  }
+`;
 
 export default function AppWrapper() {
   return (

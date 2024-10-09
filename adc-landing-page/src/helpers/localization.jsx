@@ -7,11 +7,26 @@ export const LocalizationProvider = ({ children }) => {
   const [locale, setLocale] = useState("eng");
 
   const localized = (path) => {
+    // Get value by given path
     const keys = path.split(".");
     const value = keys.reduce((obj, key) => obj?.[key], content);
-    return typeof value === "string"
-      ? value
-      : value[locale] || Object.values(value)[0];
+
+    // Find end string
+    const endValue =
+      typeof value === "string"
+        ? value
+        : value[locale] || Object.values(value)[0];
+
+    // Split strings and add <br> between if needed
+    const result = endValue.split("\n").map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        {index < endValue.split("\n").length - 1 && <br />}
+      </React.Fragment>
+    ));
+
+    // Return the result (array of React elements)
+    return result;
   };
 
   return (
