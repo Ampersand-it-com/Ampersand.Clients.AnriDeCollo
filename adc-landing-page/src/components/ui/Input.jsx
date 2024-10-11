@@ -28,6 +28,10 @@ const InputContainer = styled.label`
     border-bottom: 1px solid ${colors.bg};
   }
 
+  /* &:focus-within::before {
+    border-width: 2px;
+  } */
+
   input {
     display: block;
     width: 100%;

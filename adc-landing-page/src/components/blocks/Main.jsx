@@ -75,6 +75,7 @@ const StyledSection = styled.section`
 
     .description {
       text-align: center;
+      max-width: 320px;
     }
 
     .bg {

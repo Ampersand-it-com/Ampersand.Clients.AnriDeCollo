@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useLocalization } from "../../helpers/localization";
-import { sizes } from "../../helpers/styleSetup";
 import content from "../../helpers/content";
 
 const Workflow = () => {

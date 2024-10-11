@@ -85,7 +85,7 @@ const StyledSection = styled.section`
           flex: 1 0 0;
         }
 
-        img {
+        .img-wrapper {
           height: auto;
           flex: 1 0 0;
           min-height: 0px;
@@ -100,7 +100,9 @@ const StyledSection = styled.section`
 const Product = ({ img, text, children, ...props }) => (
   <ProductContainer {...props}>
     <div className="main">
-      <img src={img} alt={text} />
+      <div className="img-wrapper">
+        <img src={img} alt={text} />
+      </div>
       <p className="lead">{text}</p>
     </div>
     {children && <div className="additional">{children}</div>}
@@ -117,8 +119,18 @@ const ProductContainer = styled.div`
     flex-direction: column;
     gap: 12px;
 
-    img {
+    .img-wrapper {
       aspect-ratio: 1;
+      position: relative;
+      background: ${hexa(colors.main, 4)};
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        mix-blend-mode: multiply;
+      }
     }
   }
 
