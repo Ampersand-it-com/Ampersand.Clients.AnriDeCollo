@@ -47,6 +47,17 @@ const variants = {
     }
   `,
 
+  inverted: css`
+    background: ${colors.bg};
+    color: ${colors.main};
+    font-weight: 500;
+
+    &:hover,
+    &:active {
+      background: ${colors.tile};
+    }
+  `,
+
   bare: css`
     margin: -18px -32px;
 
@@ -57,6 +68,27 @@ const variants = {
     &:hover,
     &:active {
       color: ${hexa(colors.main, 80)};
+    }
+  `,
+
+  border: css`
+    width: 36px;
+    height: 36px;
+
+    color: ${colors.main};
+    background: none;
+    border: 1px solid ${colors.main};
+    border-radius: 666px;
+    padding: 0;
+
+    &:disabled {
+      color: ${hexa(colors.main, 30)};
+      border-color: ${hexa(colors.main, 30)};
+    }
+
+    &:hover,
+    &:active {
+      background: ${hexa(colors.main, 10)};
     }
   `,
 

@@ -18,15 +18,15 @@ export const LocalizationProvider = ({ children }) => {
         : value[locale] || Object.values(value)[0];
 
     // Split strings and add <br> between if needed
-    const result = endValue.split("\n").map((line, index) => (
-      <React.Fragment key={index}>
-        {line}
-        {index < endValue.split("\n").length - 1 && <br />}
-      </React.Fragment>
-    ));
+    // const result = endValue.split("\n").map((line, index) => (
+    //   <React.Fragment key={index}>
+    //     {line}
+    //     {index < endValue.split("\n").length - 1 && <br />}
+    //   </React.Fragment>
+    // ));
 
     // Return the result (array of React elements)
-    return result;
+    return endValue;
   };
 
   return (

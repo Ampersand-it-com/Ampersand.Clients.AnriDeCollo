@@ -6,6 +6,13 @@ import products3 from "../assets/img/products-3-min.jpg";
 import products4 from "../assets/img/products-4-min.jpg";
 import products5 from "../assets/img/products-5-min.jpg";
 import workflow from "../assets/img/workflow-min.jpg";
+import leather from "../assets/img/leather-min.jpg";
+import serviceIcon1 from "../assets/icons/search.svg";
+import serviceIcon2 from "../assets/icons/leather.svg";
+import serviceIcon3 from "../assets/icons/leather-cutter.svg";
+import serviceIcon4 from "../assets/icons/sewing.svg";
+import review1 from "../assets/img/review-1.webp";
+import logoFull from "../assets/icons/logo_full.svg";
 
 export default {
   header: {
@@ -108,7 +115,6 @@ export default {
       ukr: "Переваги",
       eng: "Benefits",
     },
-    img: girls2,
     slides: [
       {
         title: {
@@ -164,150 +170,236 @@ export default {
   },
 
   services: {
-    title: { ukr: "послуги" },
+    title: { ukr: "Послуги", eng: "Services" },
     description: {
       ukr: "Все, що нам потрібно – це ваша ідея. Ми беремо на себе розробку дизайну та подальшу реалізацію проєкту.",
+      eng: "All we need is your idea. We take on the design development and further project implementation.",
     },
     caption: {
       ukr: "Надаємо послуги з виробництва взуття на замовлення та контрактного виробництва з нашого каталогу під вашим брендом.",
+      eng: "We offer custom shoe manufacturing services and contract production from our catalog under your brand.",
     },
     slides: [
       {
-        title: { ukr: "Створимо дизайн" },
+        icon: serviceIcon1,
+        title: { ukr: "Створимо дизайн", eng: "We create designs" },
         description: {
           ukr: "Відділ Розробки перетворить ваші ідеї в унікальні моделі взуття, що відображають особливість вашого бренду.",
+          eng: "Our Development Department will transform your ideas into unique shoe models that reflect your brand's identity.",
         },
       },
       {
-        title: { ukr: "Підберемо матеріали" },
+        icon: serviceIcon2,
+        title: { ukr: "Підберемо матеріали", eng: "We select materials" },
         description: {
           ukr: "Володіємо технологіями роботи з будь-яким видом шкіри (натуральна, екошкіра, шкірзамінник).",
+          eng: "We have the expertise to work with any type of leather (natural, eco-leather, synthetic).",
         },
       },
       {
-        title: { ukr: "Працюємо комплексно" },
+        icon: serviceIcon3,
+        title: {
+          ukr: "Працюємо комплексно",
+          eng: "We provide comprehensive services",
+        },
         description: {
-          ukr: "Підберемо необхідні матеріали, фурнітуру та надійних постачальників. ",
+          ukr: "Підберемо необхідні матеріали, фурнітуру та надійних постачальників.",
+          eng: "We select the necessary materials, fittings, and reliable suppliers.",
         },
       },
       {
-        title: { ukr: "Забезпечимо повний супровід" },
+        icon: serviceIcon4,
+        title: {
+          ukr: "Забезпечимо повний супровід",
+          eng: "We provide full support",
+        },
         description: {
           ukr: "Надаємо гарантію на нашу продукцію та завжди готові проконсультувати.",
+          eng: "We provide a guarantee on our products and are always ready to offer consultations.",
         },
       },
     ],
   },
 
   products: {
-    title: { ukr: "Продукція" },
-    caption: { ukr: "Більше інформації" },
+    title: { ukr: "Продукція", eng: "Products" },
+    caption: { ukr: "Більше інформації", eng: "More information" },
     email: "anridecollo@gmail.com",
-    action: { ukr: "Завантажити каталог" },
+    action: { ukr: "Завантажити каталог", eng: "Download catalog" },
     slides: [
       {
-        caption: { ukr: "Кросівки" },
+        img: products1,
+        caption: { ukr: "Кросівки", eng: "Sneakers" },
       },
       {
-        caption: { ukr: "Чоботи зі шнурівкою" },
+        img: products2,
+        caption: { ukr: "Чоботи зі шнурівкою", eng: "Lace-up boots" },
       },
       {
-        caption: { ukr: "Ботфорти" },
+        img: products3,
+        caption: { ukr: "Ботфорти", eng: "Over-the-knee boots" },
       },
       {
-        caption: { ukr: "Лофери" },
+        img: products4,
+        caption: { ukr: "Лофери", eng: "Loafers" },
       },
       {
-        caption: { ukr: "Сандалі" },
+        img: products5,
+        caption: { ukr: "Сандалі", eng: "Sandals" },
       },
     ],
   },
 
   contact: {
-    title: { ukr: "Отримайте консультацію " },
-    description: { ukr: "Заповніть форму, і ми звʼяжемось з вами" },
-    caption: { ukr: "Наш email" },
+    title: { ukr: "Отримайте консультацію", eng: "Get a Consultation" },
+    description: {
+      ukr: "Заповніть форму, і ми звʼяжемось з вами",
+      eng: "Fill out the form, and we will contact you",
+    },
+    caption: { ukr: "Наш email", eng: "Our email" },
     email: "andridecollo@gmail.com",
+    img: leather,
     form: {
-      name: { ukr: "Ім'я" },
-      surname: { ukr: "Прізвище" },
+      name: { ukr: "Ім'я", eng: "First Name" },
+      surname: { ukr: "Прізвище", eng: "Last Name" },
       email: "Email",
-      action: { ukr: "Надіслати" },
+      message: { ukr: "Повідомлення", eng: "Message" },
+      action: { ukr: "Надіслати", eng: "Send" },
     },
   },
 
   reviews: {
-    title: { ukr: "Відгуки наших клієнтів" },
+    title: { ukr: "Відгуки наших клієнтів", eng: "Customer Reviews" },
     slides: [
       {
-        name: { ukr: "Анна Мельник" },
-        role: { ukr: "Покупець" },
+        name: { ukr: "Анна Мельник", eng: "Anna Melnyk" },
+        role: { ukr: "Покупець", eng: "Customer" },
         review: {
           ukr: "Дуже задоволена покупкою! Якість взуття перевершила очікування, натуральна шкіра та зручна посадка. Замовлення доставили швидко, сервіс на високому рівні.",
+          eng: "Very satisfied with the purchase! The quality of the shoes exceeded expectations, with genuine leather and a comfortable fit. The order was delivered quickly, and the service was top-notch.",
         },
+        img: review1,
+      },
+      {
+        name: { ukr: "Анна Мельник", eng: "Anna Melnyk" },
+        role: { ukr: "Покупець", eng: "Customer" },
+        review: {
+          ukr: "Дуже задоволена покупкою! Якість взуття перевершила очікування, натуральна шкіра та зручна посадка. Замовлення доставили швидко, сервіс на високому рівні.",
+          eng: "Very satisfied with the purchase! The quality of the shoes exceeded expectations, with genuine leather and a comfortable fit. The order was delivered quickly, and the service was top-notch.",
+        },
+        img: review1,
+      },
+      {
+        name: { ukr: "Анна Мельник", eng: "Anna Melnyk" },
+        role: { ukr: "Покупець", eng: "Customer" },
+        review: {
+          ukr: "Дуже задоволена покупкою! Якість взуття перевершила очікування, натуральна шкіра та зручна посадка. Замовлення доставили швидко, сервіс на високому рівні.",
+          eng: "Very satisfied with the purchase! The quality of the shoes exceeded expectations, with genuine leather and a comfortable fit. The order was delivered quickly, and the service was top-notch.",
+        },
+        img: review1,
+      },
+      {
+        name: { ukr: "Анна Мельник", eng: "Anna Melnyk" },
+        role: { ukr: "Покупець", eng: "Customer" },
+        review: {
+          ukr: "Дуже задоволена покупкою! Якість взуття перевершила очікування, натуральна шкіра та зручна посадка. Замовлення доставили швидко, сервіс на високому рівні.",
+          eng: "Very satisfied with the purchase! The quality of the shoes exceeded expectations, with genuine leather and a comfortable fit. The order was delivered quickly, and the service was top-notch.",
+        },
+        img: review1,
       },
     ],
   },
 
   workflow: {
-    title: { ukr: "Процес виробництва" },
+    title: { ukr: "Процес виробництва", eng: "Manufacturing Process" },
+    preview: workflow,
   },
 
   faq: {
-    title: "FAQ",
-    action: { ukr: "Сконтактуйся" },
+    title: { ukr: "FAQ", eng: "FAQ" },
+    action: { ukr: "Сконтактуйся", eng: "Contact Us" },
     items: [
       {
-        title: { ukr: "Доставка" },
+        title: { ukr: "Доставка", eng: "Delivery" },
         description: {
           ukr: 'Ми пропонуємо доставку по всій Україні за допомогою популярних кур\'єрських служб, таких як "Нова Пошта". Термін доставки зазвичай становить 1-3 робочі дні, залежно від вашого місцезнаходження. Після оформлення замовлення ви отримаєте трекінг-номер для відстеження. Оплата доставки здійснюється згідно з тарифами перевізника, але для замовлень на певну суму ми надаємо безкоштовну доставку.',
+          eng: 'We offer delivery across Ukraine using popular courier services such as "Nova Poshta". The delivery time usually takes 1-3 business days, depending on your location. After placing an order, you will receive a tracking number. Delivery payment is made according to the carrier’s rates, but we offer free delivery for orders over a certain amount.',
         },
       },
       {
-        title: { ukr: "Яка гарантія на взуття?" },
-        description: { ukr: "Яка гарантія на взуття?" },
+        title: {
+          ukr: "Яка гарантія на взуття?",
+          eng: "What is the warranty on shoes?",
+        },
+        description: {
+          ukr: "Яка гарантія на взуття?",
+          eng: "What is the warranty on shoes?",
+        },
       },
       {
-        title: { ukr: "Чи можна повернути або обміняти товар?" },
-        description: { ukr: "Чи можна повернути або обміняти товар?" },
+        title: {
+          ukr: "Чи можна повернути або обміняти товар?",
+          eng: "Can I return or exchange a product?",
+        },
+        description: {
+          ukr: "Чи можна повернути або обміняти товар?",
+          eng: "Can I return or exchange a product?",
+        },
       },
       {
-        title: { ukr: "Які способи оплати доступні?" },
-        description: { ukr: "Які способи оплати доступні?" },
+        title: {
+          ukr: "Які способи оплати доступні?",
+          eng: "What payment methods are available?",
+        },
+        description: {
+          ukr: "Які способи оплати доступні?",
+          eng: "What payment methods are available?",
+        },
       },
       {
-        title: { ukr: "Чи доступна міжнародна доставка?" },
-        description: { ukr: "Чи доступна міжнародна доставка?" },
+        title: {
+          ukr: "Чи доступна міжнародна доставка?",
+          eng: "Is international shipping available?",
+        },
+        description: {
+          ukr: "Чи доступна міжнародна доставка?",
+          eng: "Is international shipping available?",
+        },
       },
     ],
   },
 
   footer: {
     form: {
-      cta: { ukr: "Сконтактуйтеся з нами" },
-      input: { ukr: "Напишіть повідомлення" },
-      action: { ukr: "Надіслати" },
+      cta: { ukr: "Сконтактуйтеся з нами", eng: "Contact Us" },
+      input: { ukr: "Напишіть повідомлення", eng: "Write a message" },
+      action: { ukr: "Надіслати", eng: "Send" },
     },
-    info: {
-      about: [
-        { ukr: "Про нас" },
-        { ukr: "Переваги" },
-        { ukr: "Послуги" },
-        { ukr: "Відгуки" },
-        { eng: "FAQ" },
+    info: [
+      [
+        { ukr: "Про нас", eng: "About Us" },
+        { ukr: "Переваги", eng: "Advantages", href: "#benefits" },
+        { ukr: "Послуги", eng: "Services", href: "#services" },
+        { ukr: "Відгуки", eng: "Reviews", href: "#reviews" },
+        { eng: "FAQ", ukr: "FAQ", href: "#faq" },
       ],
-      portfolio: [
-        { ukr: "Наше порфтоліо" },
-        { ukr: "Продукція" },
-        { ukr: "Каталог" },
-        { ukr: "Процес" },
+      [
+        { ukr: "Наше порфтоліо", eng: "Our Portfolio" },
+        { ukr: "Продукція", eng: "Products", href: "#products" },
+        { ukr: "Каталог", eng: "Catalog", href: "#products" },
+        { ukr: "Процес", eng: "Process", href: "#workflow" },
       ],
-      social: [
-        { ukr: "Соцмережі" },
-        { eng: "Linkedin" },
-        { eng: "Instagram" },
-        { eng: "Facebook" },
+      [
+        { ukr: "Соцмережі", eng: "Social Media" },
+        { eng: "Linkedin", ukr: "Linkedin", href: "https://www.linkedin.com/" },
+        {
+          eng: "Instagram",
+          ukr: "Instagram",
+          href: "https://www.instagram.com/",
+        },
+        { eng: "Facebook", ukr: "Facebook", href: "https://www.facebook.com/" },
       ],
-    },
+    ],
+    logo: logoFull,
   },
 };

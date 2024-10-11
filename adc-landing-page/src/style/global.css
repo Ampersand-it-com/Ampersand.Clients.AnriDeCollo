@@ -47,6 +47,7 @@ em {
 .text {
   font-size: 16px;
   line-height: 1.3;
+  opacity: 0.8;
 }
 
 h2,
@@ -59,18 +60,41 @@ h3,
 .h3 {
   font-size: 32px;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 h4,
 .h4 {
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 /* Variables */
 body {
   --gap-s: 8px;
   --gap-l: 20px;
+}
+
+/* Features */
+
+/* width */
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+  background: none;
+}
+
+/* Track */
+.scrollbar::-webkit-scrollbar-track {
+  background: #fff1;
+}
+
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #ffff;
+}
+
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #fffa;
 }

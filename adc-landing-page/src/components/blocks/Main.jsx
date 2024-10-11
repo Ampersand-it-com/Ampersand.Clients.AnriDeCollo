@@ -2,7 +2,6 @@ import content from "../../helpers/content";
 import { useLocalization } from "../../helpers/localization";
 import Button from "../ui/Button";
 import ArrowDown from "../../assets/icons/arrow-down.svg?react";
-import { useEffect } from "react";
 import styled from "styled-components";
 import { sizes } from "../../helpers/styleSetup";
 

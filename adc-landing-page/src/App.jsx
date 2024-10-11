@@ -8,6 +8,14 @@ import Main from "./components/blocks/Main";
 import Features from "./components/blocks/Features";
 import About from "./components/blocks/About";
 import History from "./components/blocks/History";
+import Services from "./components/blocks/Services";
+import Benefits from "./components/blocks/Benefits";
+import Products from "./components/blocks/Products";
+import Contact from "./components/blocks/Contact";
+import Reviews from "./components/blocks/Reviews";
+import Footer from "./components/blocks/Footer";
+import FAQ from "./components/blocks/FAQ";
+import Workflow from "./components/blocks/Workflow";
 
 function App() {
   const { setLocale } = useLocalization();
@@ -24,7 +32,15 @@ function App() {
         <Features />
         <About />
         <History />
+        <Benefits />
+        <Services />
+        <Products />
+        <Contact />
+        <Reviews />
+        <Workflow />
+        <FAQ />
       </main>
+      <Footer />
     </AppContainer>
   );
 }
