@@ -98,6 +98,12 @@ const StyledSection = styled.section`
     inset: 0;
     z-index: -1;
   }
+
+  @media screen and (min-width: 1600px) {
+    .left .bg {
+      object-position: center 80%;
+    }
+  }
 `;
 
 export default Main;

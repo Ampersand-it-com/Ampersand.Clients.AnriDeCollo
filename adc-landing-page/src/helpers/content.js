@@ -18,10 +18,11 @@ export default {
   header: {
     logo: "ADC",
     navigation: [
-      { ukr: "Переваги", eng: "Benefits", href: "#benefits" },
       { ukr: "Про нас", eng: "About us", href: "#about-us" },
-      { ukr: "Продукція", eng: "Products", href: "#products" },
+      { ukr: "Переваги", eng: "Benefits", href: "#benefits" },
       { ukr: "Послуги", eng: "Services", href: "#services" },
+      { ukr: "Продукція", eng: "Products", href: "#products" },
+      { ukr: "Відгуки", eng: "Кумшуці", href: "#reviews" },
       { ukr: "FAQ", eng: "FAQ", href: "#faq" },
     ],
     locale: {
@@ -313,6 +314,7 @@ export default {
   workflow: {
     title: { ukr: "Процес виробництва", eng: "Manufacturing Process" },
     preview: workflow,
+    video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
 
   faq: {

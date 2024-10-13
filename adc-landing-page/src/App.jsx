@@ -16,6 +16,7 @@ import Reviews from "./components/blocks/Reviews";
 import Footer from "./components/blocks/Footer";
 import FAQ from "./components/blocks/FAQ";
 import Workflow from "./components/blocks/Workflow";
+import Test from "./components/blocks/Test";
 
 function App() {
   const { setLocale } = useLocalization();

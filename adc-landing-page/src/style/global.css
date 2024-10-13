@@ -98,3 +98,11 @@ body {
 .scrollbar::-webkit-scrollbar-thumb:hover {
   background: #fffa;
 }
+
+.pswp__counter {
+  font-family: "NyghtSerif";
+}
+
+.pswp__button--zoom {
+  display: none !important;
+}

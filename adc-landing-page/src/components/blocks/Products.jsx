@@ -1,8 +1,10 @@
+import { Gallery } from "react-photoswipe-gallery";
 import content from "../../helpers/content";
 import { useLocalization } from "../../helpers/localization";
 import { colors, hexa } from "../../helpers/styleSetup";
 import Button from "../ui/Button";
 import styled from "styled-components";
+import Product from "../parts/Product";
 
 function Products() {
   const { localized } = useLocalization();
@@ -19,15 +21,22 @@ function Products() {
         </div>
       </div>
       <div className="products-container">
-        {content.products.slides.map((product, index) => (
-          <Product
-            img={product.img}
-            text={localized("products.slides." + index + ".caption")}
-            key={index}
-          >
-            {index == 0 && <Button>{localized("products.action")}</Button>}
-          </Product>
-        ))}
+        <Gallery
+          withCaption
+          options={{
+            bgOpacity: 0.8,
+          }}
+        >
+          {content.products.slides.map((product, index) => (
+            <Product
+              img={product.img}
+              text={localized("products.slides." + index + ".caption")}
+              key={index}
+            >
+              {index == 0 && <Button>{localized("products.action")}</Button>}
+            </Product>
+          ))}
+        </Gallery>
       </div>
     </StyledSection>
   );
@@ -92,50 +101,6 @@ const StyledSection = styled.section`
         }
       }
     }
-  }
-`;
-
-// Product
-
-const Product = ({ img, text, children, ...props }) => (
-  <ProductContainer {...props}>
-    <div className="main">
-      <div className="img-wrapper">
-        <img src={img} alt={text} />
-      </div>
-      <p className="lead">{text}</p>
-    </div>
-    {children && <div className="additional">{children}</div>}
-  </ProductContainer>
-);
-
-const ProductContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-
-  .main {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    .img-wrapper {
-      aspect-ratio: 1;
-      position: relative;
-      background: ${hexa(colors.main, 4)};
-
-      img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-
-        mix-blend-mode: multiply;
-      }
-    }
-  }
-
-  .additional {
-    padding-bottom: 50px;
   }
 `;
 

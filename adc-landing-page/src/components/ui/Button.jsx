@@ -71,6 +71,19 @@ const variants = {
     }
   `,
 
+  bareInverted: css`
+    margin: -18px -32px;
+
+    color: ${colors.bg};
+    background: none;
+    backdrop-filter: none;
+
+    &:hover,
+    &:active {
+      color: ${hexa(colors.bg, 80)};
+    }
+  `,
+
   border: css`
     width: 36px;
     height: 36px;

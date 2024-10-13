@@ -22,7 +22,7 @@ const Benefits = () => {
   const [isEnd, setIsEnd] = useState(false);
 
   return (
-    <StyledSection>
+    <StyledSection id="benefits">
       <div className="title-block">
         <h2>{localized("benefits.title")}</h2>
         <div className="arrows">
