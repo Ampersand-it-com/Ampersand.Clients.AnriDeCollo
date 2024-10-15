@@ -3,32 +3,52 @@ import { useLocalization } from "../../helpers/localization";
 import Button from "../ui/Button";
 import ArrowDown from "../../assets/icons/arrow-down.svg?react";
 import styled from "styled-components";
-import { sizes } from "../../helpers/styleSetup";
+import { smoothScrollTo } from "../../helpers/common";
+import TitleUkr from "../../assets/svg/title-ukr.svg?react";
+import TitleEng from "../../assets/svg/title-eng.svg?react";
+import useResponsive from "../../hooks/useResponsive";
 
 function Main() {
-  const { localized } = useLocalization();
+  const { locale, localized } = useLocalization();
+
+  const screen = useResponsive();
+
+  const handleButtonClick = (href) => {
+    smoothScrollTo(href);
+  };
 
   return (
     <StyledSection id="main">
       <div className="left">
-        <h1 className="title">
-          {localized("main.title")}
-          <em>{localized("main.titleEmp")}</em>
-          {localized("main.titleEnd")}
-        </h1>
+        {locale == "ukr" ? (
+          <TitleUkr className="title-svg" />
+        ) : (
+          <TitleEng className="title-svg" />
+        )}
+        <h1 className="title">{localized("main.title")}</h1>
         <div className="col">
           <p className="description lead">{localized("main.description")}</p>
-          <Button>{localized("main.action")}</Button>
+          <Button
+            className="action"
+            onClick={() => handleButtonClick(content.main.action.href)}
+          >
+            {localized("main.action")}
+          </Button>
         </div>
         <img className="bg" src={content.main.img1} alt="" />
       </div>
 
-      <div className="right">
-        <Button variant="bare">
-          {localized("main.details")} <ArrowDown />
-        </Button>
-        <img className="bg" src={content.main.img2} alt="" />
-      </div>
+      {screen !== "mobile" && (
+        <div className="right">
+          <Button
+            variant="bare"
+            onClick={() => handleButtonClick(content.main.details.href)}
+          >
+            {localized("main.details")} <ArrowDown />
+          </Button>
+          <img className="bg" src={content.main.img2} alt="" />
+        </div>
+      )}
     </StyledSection>
   );
 }
@@ -44,8 +64,9 @@ const StyledSection = styled.section`
     position: relative;
     flex: 1 0 0;
     min-width: 0px;
+    overflow: hidden;
 
-    padding: ${sizes.paddingL};
+    padding: var(--padding-xl);
   }
 
   .left {
@@ -53,17 +74,19 @@ const StyledSection = styled.section`
     flex-direction: column;
     justify-content: space-between;
 
-    .title {
-      --title-size: calc((100vw - 200px) * 0.0375);
+    .title-svg {
+      width: 100%;
+      height: auto;
+    }
 
-      /* text-align: center; */
+    .title {
       text-transform: uppercase;
       font-size: var(--title-size);
-
-      em {
-        position: relative;
-        top: var(--title-size);
-      }
+      position: absolute;
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      color: transparent;
     }
 
     .col {
@@ -102,6 +125,21 @@ const StyledSection = styled.section`
   @media screen and (min-width: 1600px) {
     .left .bg {
       object-position: center 80%;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    height: calc(100vh - 56px);
+    min-height: 560px;
+  }
+
+  @media screen and (max-width: 719px) {
+    .left .bg {
+      transform: scale(1.5) translate(0, -15%);
+    }
+
+    .action {
+      align-self: stretch;
     }
   }
 `;

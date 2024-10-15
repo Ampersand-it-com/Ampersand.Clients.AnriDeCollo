@@ -6,7 +6,7 @@ const Features = () => {
   const { localized } = useLocalization();
 
   return (
-    <StyledSection>
+    <StyledSection id="features" className="no-scrollbar">
       <Feature
         title={localized("features.0.title")}
         description={localized("features.0.description")}
@@ -32,6 +32,22 @@ const StyledSection = styled.section`
     flex: 1 0 0;
     min-width: 0px;
   }
+
+  @media screen and (max-width: 1199px) {
+    overflow-x: auto;
+
+    .feature {
+      min-width: 420px;
+    }
+  }
+
+  @media screen and (max-width: 719px) {
+    overflow-x: auto;
+
+    .feature {
+      min-width: 300px;
+    }
+  }
 `;
 
 // Feature
@@ -47,8 +63,8 @@ const FeatureContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px;
-  gap: 20px;
+  padding: var(--padding-l);
+  gap: var(--padding-m);
 
   background: ${colors.primary};
   color: ${colors.bg};

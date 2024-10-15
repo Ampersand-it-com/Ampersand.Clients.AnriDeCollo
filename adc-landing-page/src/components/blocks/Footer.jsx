@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { useLocalization } from "../../helpers/localization";
 import content from "../../helpers/content";
 import { colors, hexa } from "../../helpers/styleSetup";
-import LogoFull from "../../assets/icons/logo_full.svg?react";
-import StyledLogo from "../parts/logo";
+import LogoFull from "../../assets/svg/logo_full.svg?react";
+import StyledLogo from "../parts/Logo";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
 
@@ -26,7 +26,7 @@ const Footer = () => {
           </form>
         </div>
         <div className="part info">
-          <p className="h4">{localized("about.description")}</p>
+          <p className="h4 description">{localized("about.description")}</p>
           <div className="row">
             {content.footer.info.map((col, i) => (
               <div className="col" key={i}>
@@ -52,7 +52,7 @@ const Footer = () => {
 const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: var(--padding-xl);
   gap: 100px;
 
   background: ${colors.main};
@@ -71,20 +71,20 @@ const StyledFooter = styled.footer`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
-    padding-bottom: 50px;
+    gap: var(--gap-m);
+    padding-bottom: var(--padding-xl);
     align-items: start;
 
     form {
       width: calc((100vw - 50px * 2 + 20px * 2) * 0.333);
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: var(--gap-m);
 
       .row {
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        gap: var(--gap-m);
       }
 
       .input {
@@ -96,19 +96,19 @@ const StyledFooter = styled.footer`
   .part.info {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: var(--gap-xl);
 
     .row {
       display: flex;
       flex-direction: row;
-      gap: 20px;
+      gap: var(--gap-m);
       justify-content: space-between;
     }
 
     .col {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: var(--gap-s);
 
       h5 {
         font-weight: 700;
@@ -120,6 +120,49 @@ const StyledFooter = styled.footer`
   .logo-full {
     width: 100%;
     height: auto;
+  }
+
+  @media screen and (max-width: 1199px) {
+    gap: 50px;
+
+    & > .main {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .part.info {
+      gap: 32px;
+    }
+
+    form {
+      width: 100% !important;
+    }
+
+    .description {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 719px) {
+    .part.info {
+      .row {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .col {
+        flex-flow: row wrap;
+
+        & > *:first-child {
+          min-width: 100%;
+        }
+      }
+    }
+
+    .description {
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
 `;
 

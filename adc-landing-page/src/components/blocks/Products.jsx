@@ -5,9 +5,16 @@ import { colors, hexa } from "../../helpers/styleSetup";
 import Button from "../ui/Button";
 import styled from "styled-components";
 import Product from "../parts/Product";
+import { download } from "../../helpers/common";
+import useResponsive from "../../hooks/useResponsive";
 
 function Products() {
   const { localized } = useLocalization();
+  const screen = useResponsive();
+
+  const handleActionClick = (url) => {
+    download(url, "catalog");
+  };
 
   return (
     <StyledSection id="products">
@@ -20,7 +27,15 @@ function Products() {
           </a>
         </div>
       </div>
-      <div className="products-container">
+      {screen === "tablet" && (
+        <Button
+          className="mobile-action"
+          onClick={(e) => handleActionClick(content.products.action.href)}
+        >
+          {localized("products.action")}
+        </Button>
+      )}
+      <div className="products-container no-scrollbar">
         <Gallery
           withCaption
           options={{
@@ -33,11 +48,28 @@ function Products() {
               text={localized("products.slides." + index + ".caption")}
               key={index}
             >
-              {index == 0 && <Button>{localized("products.action")}</Button>}
+              {index == 0 &&
+                (screen === "desktop" || screen === "ultrawide") && (
+                  <Button
+                    onClick={(e) =>
+                      handleActionClick(content.products.action.href)
+                    }
+                  >
+                    {localized("products.action")}
+                  </Button>
+                )}
             </Product>
           ))}
         </Gallery>
       </div>
+      {screen === "mobile" && (
+        <Button
+          className="mobile-action"
+          onClick={(e) => handleActionClick(content.products.action.href)}
+        >
+          {localized("products.action")}
+        </Button>
+      )}
     </StyledSection>
   );
 }
@@ -45,7 +77,7 @@ function Products() {
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--gap-m);
 
   .title-block {
     display: flex;
@@ -58,7 +90,7 @@ const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: end;
-    gap: 8px;
+    gap: var(--gap-xs);
 
     .caption {
       color: ${hexa(colors.main, 80)};
@@ -72,33 +104,74 @@ const StyledSection = styled.section`
   .products-container {
     display: flex;
     flex-flow: row wrap;
-    gap: 20px;
+    gap: var(--gap-xs);
 
     & > * {
       flex: 1 0 0;
       min-width: 30%;
 
-      &:nth-child(1) {
-        min-width: 40%;
+      @media screen and (min-width: 1200px) {
+        &:nth-child(1) {
+          min-width: 40%;
 
-        .main {
-          align-self: flex-start;
-          width: calc((100vw - (100px + 3 * 20px)) * 0.25);
+          .main {
+            align-self: flex-start;
+            width: calc((100vw - (100px + 3 * 20px)) * 0.25);
+          }
+        }
+
+        &:nth-child(2) {
+          min-width: 40%;
+
+          .main {
+            flex: 1 0 0;
+          }
+
+          .img-wrapper {
+            height: auto;
+            flex: 1 0 0;
+            min-height: 0px;
+          }
         }
       }
+    }
+  }
 
-      &:nth-child(2) {
-        min-width: 40%;
+  @media screen and (max-width: 1199px) {
+    .mobile-action {
+      align-self: flex-start;
+    }
 
-        .main {
-          flex: 1 0 0;
-        }
+    .products-container {
+      margin: 0 calc(0px - var(--padding-xl));
+      padding: 0 var(--padding-xl);
+      flex-wrap: nowrap;
+      overflow-x: auto;
 
-        .img-wrapper {
-          height: auto;
-          flex: 1 0 0;
-          min-height: 0px;
-        }
+      & > * {
+        min-width: 400px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 719px) {
+    .mobile-action {
+      align-self: unset;
+    }
+
+    .title-block {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--gap-m);
+    }
+
+    .caption-block {
+      align-items: start;
+    }
+
+    .products-container {
+      & > * {
+        min-width: 300px;
       }
     }
   }

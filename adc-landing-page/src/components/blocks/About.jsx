@@ -2,17 +2,23 @@ import styled from "styled-components";
 import { useLocalization } from "../../helpers/localization";
 import Button from "../ui/Button";
 import { sizes } from "../../helpers/styleSetup";
+import { smoothScrollTo } from "../../helpers/common";
+import content from "../../helpers/content";
 
 const About = () => {
   const { localized } = useLocalization();
 
+  const handleActionClick = () => {
+    smoothScrollTo(content.about.action.href);
+  };
+
   return (
-    <StyledSection>
+    <StyledSection id="about">
       <div className="titleBlock">
         <h2>{localized("about.title")}</h2>
-        <Button>{localized("about.action")}</Button>
+        <Button onClick={handleActionClick}>{localized("about.action")}</Button>
       </div>
-      <p className="description h3">{localized("about.description")}</p>
+      <p className="h3 description">{localized("about.description")}</p>
     </StyledSection>
   );
 };
@@ -20,21 +26,40 @@ const About = () => {
 const StyledSection = styled.section`
   display: flex;
   flex-direction: row;
-  gap: ${sizes.gapM};
+  gap: var(--gap-m);
 
   .titleBlock {
     flex-shrink: 0;
-    width: calc((100% - ${sizes.gapM} * 2) * 0.333);
+    width: calc((100% - var(--gap-m) * 2) * 0.333);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    gap: ${sizes.gapM};
+    gap: var(--gap-m);
   }
 
   .description::before {
     content: "      ";
+  }
+
+  @media screen and (max-width: 1199px) {
+    flex-direction: column;
+
+    .titleBlock {
+      flex-direction: row;
+      width: unset;
+    }
+
+    .description {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    .description {
+      font-size: 20px;
+    }
   }
 `;
 

@@ -9,7 +9,7 @@ const Workflow = () => {
   const { localized } = useLocalization();
 
   return (
-    <StyledSection>
+    <StyledSection id="workflow">
       <h2>{localized("workflow.title")}</h2>
       <Gallery>
         <Item
@@ -39,7 +39,7 @@ const Workflow = () => {
               ref={ref}
             >
               <Button variant="bareInverted">
-                <Play />
+                <Play className="icon-play" />
               </Button>
               <img src={content.workflow.preview} alt="Video preview" />
             </a>
@@ -53,7 +53,7 @@ const Workflow = () => {
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--gap-m);
 
   & > .main {
     position: relative;
@@ -76,13 +76,20 @@ const StyledSection = styled.section`
       z-index: -1;
     }
   }
+
+  @media screen and (max-width: 1199px) {
+    .icon-play {
+      width: 60px;
+      height: auto;
+    }
+  }
 `;
 
 const IframeWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 50px;
+  padding: var(--padding-xl);
 
   display: flex;
   pointer-events: none;
@@ -94,6 +101,19 @@ const IframeWrapper = styled.div`
     width: auto;
     height: auto;
     pointer-events: auto;
+  }
+
+  @media screen and (max-width: 719px) {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+
+    & > * {
+      width: 100%;
+      aspect-ratio: 16/9;
+      height: auto;
+      pointer-events: auto;
+    }
   }
 `;
 

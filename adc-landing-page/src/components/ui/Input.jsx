@@ -25,6 +25,7 @@ const InputContainer = styled.label`
     height: 100%;
     inset: 0;
     z-index: 0;
+    pointer-events: none;
     border-bottom: 1px solid ${colors.bg};
   }
 
@@ -47,6 +48,13 @@ const InputContainer = styled.label`
     &::placeholder {
       color: ${hexa(colors.bg, 40)};
     }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: ${colors.bg};
+    -webkit-box-shadow: 0 0 0 30px ${colors.primary} inset !important;
   }
 `;
 

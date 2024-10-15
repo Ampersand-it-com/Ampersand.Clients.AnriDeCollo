@@ -4,15 +4,20 @@ import Button from "../ui/Button";
 import { sizes } from "../../helpers/styleSetup";
 import content from "../../helpers/content";
 import Accordion from "../ui/Accordion";
+import { smoothScrollTo } from "../../helpers/common";
 
 const FAQ = () => {
   const { localized } = useLocalization();
 
+  const handleActionClick = () => {
+    smoothScrollTo(content.faq.action.href);
+  };
+
   return (
-    <StyledSection>
+    <StyledSection id="faq">
       <div className="titleBlock">
         <h2>{localized("faq.title")}</h2>
-        <Button>{localized("faq.action")}</Button>
+        <Button onClick={handleActionClick}>{localized("faq.action")}</Button>
       </div>
       <div className="accordions-container">
         {content.faq.items.map((item, index) => (
@@ -34,17 +39,17 @@ const FAQ = () => {
 const StyledSection = styled.section`
   display: flex;
   flex-direction: row;
-  gap: ${sizes.gapM};
+  gap: var(--gap-m);
 
   .titleBlock {
     flex-shrink: 0;
-    width: calc((100% - ${sizes.gapM} * 2) * 0.333);
+    width: calc((100% - var(--gap-m) * 2) * 0.333);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
-    gap: ${sizes.gapM};
+    gap: var(--gap-m);
   }
 
   .accordions-container {
@@ -53,6 +58,20 @@ const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
     padding-top: 50px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    flex-direction: column;
+
+    .titleBlock {
+      width: initial;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .accordions-container {
+    padding-top: 0;
   }
 `;
 

@@ -16,7 +16,7 @@ import Reviews from "./components/blocks/Reviews";
 import Footer from "./components/blocks/Footer";
 import FAQ from "./components/blocks/FAQ";
 import Workflow from "./components/blocks/Workflow";
-import Test from "./components/blocks/Test";
+import { breakpoints } from "./helpers/styleSetup";
 
 function App() {
   const { setLocale } = useLocalization();
@@ -53,8 +53,25 @@ const AppContainer = styled.div`
   main {
     display: flex;
     flex-direction: column;
-    padding: 50px 50px 150px;
-    gap: 150px;
+    gap: var(--gap-xl);
+    padding-bottom: 100px;
+
+    & > * {
+      padding: var(--padding-xl);
+    }
+  }
+
+  @media screen and (min-width: ${breakpoints.ultrawide}px) {
+    max-width: ${breakpoints.ultrawide}px;
+    overflow: hidden;
+    margin-left: calc((100vw - ${breakpoints.ultrawide}px) / 2);
+  }
+
+  @media screen and (max-width: 1199px) {
+    main {
+      gap: 60px;
+      padding-bottom: 80px;
+    }
   }
 `;
 

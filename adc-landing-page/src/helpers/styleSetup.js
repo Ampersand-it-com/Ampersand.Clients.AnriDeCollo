@@ -14,7 +14,7 @@ function hexa(hexColor, alphaPercents) {
 const breakpoints = {
   ultrawide: 1920,
   desktop: 1200,
-  tablet: 768,
+  tablet: 720,
 };
 
 const sizes = {

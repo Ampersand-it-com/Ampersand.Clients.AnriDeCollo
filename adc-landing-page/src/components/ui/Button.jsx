@@ -14,7 +14,7 @@ const StyledButton = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 18px 32px;
+  padding: 16px 32px;
   gap: 8px;
 
   border: none;
@@ -59,7 +59,7 @@ const variants = {
   `,
 
   bare: css`
-    margin: -18px -32px;
+    margin: -16px -32px;
 
     color: ${colors.main};
     background: none;
@@ -72,7 +72,7 @@ const variants = {
   `,
 
   bareInverted: css`
-    margin: -18px -32px;
+    margin: -16px -32px;
 
     color: ${colors.bg};
     background: none;

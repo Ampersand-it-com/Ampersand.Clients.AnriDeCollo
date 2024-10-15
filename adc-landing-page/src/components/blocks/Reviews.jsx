@@ -14,16 +14,18 @@ import Quotes from "../../assets/icons/quotes.svg?react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
+import useResponsive from "../../hooks/useResponsive";
 
 const Reviews = () => {
   const { localized } = useLocalization();
+  const screen = useResponsive();
 
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
   return (
-    <StyledSection>
+    <StyledSection id="reviews">
       <div className="title-block">
         <h2>{localized("reviews.title")}</h2>
         <div className="arrows">
@@ -47,7 +49,7 @@ const Reviews = () => {
         className="slider"
         modules={[Navigation]}
         spaceBetween={20}
-        slidesPerView={3}
+        slidesPerView={screen === "mobile" ? 1 : screen === "tablet" ? 2 : 3}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
           setIsBeginning(swiper.isBeginning);
@@ -78,7 +80,7 @@ const Reviews = () => {
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--gap-m);
 
   .title-block {
     display: flex;
@@ -90,7 +92,7 @@ const StyledSection = styled.section`
   .arrows {
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: var(--gap-xs);
   }
 
   .slider {
@@ -99,6 +101,14 @@ const StyledSection = styled.section`
 
     .swiper-wrapper {
     }
+  }
+
+  @media screen and (max-width: 1199px) {
+    /* .slider {
+      align-self: flex-start;
+      width: calc(100% - 40px);
+      margin-right: 40px !important;
+    } */
   }
 `;
 
@@ -125,15 +135,16 @@ const Review = ({ img, name, role, review }) => (
 const ReviewContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  gap: 20px;
+  padding: var(--padding-m);
+  gap: var(--gap-m);
 
   background: ${colors.tile};
 
   & > .main {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: var(--gap-m);
+    min-height: 5lh;
 
     .icon-container {
       color: ${colors.primary};
@@ -143,7 +154,7 @@ const ReviewContainer = styled.div`
   & > .footer {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: var(--gap-m);
     align-items: center;
 
     img {

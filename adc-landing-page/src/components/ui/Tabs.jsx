@@ -13,7 +13,9 @@ const Tabs = ({ children }) => {
       {children.map((child, index) => {
         return React.cloneElement(child, {
           active: activeTab === index,
-          onClick: () => handleTabClick(index),
+          clickEffect: () => {
+            handleTabClick(index);
+          },
           key: index,
         });
       })}

@@ -7,7 +7,7 @@ const Services = () => {
   const { localized } = useLocalization();
 
   return (
-    <StyledSection>
+    <StyledSection id="services">
       <h2>{localized("services.title")}</h2>
       <div className="card">
         <div className="text-block">
@@ -37,13 +37,13 @@ const Services = () => {
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--gap-m);
 
   .card {
     display: flex;
     flex-direction: row;
-    padding: 50px;
-    gap: 20px;
+    padding: var(--padding-xl);
+    gap: var(--gap-m);
 
     background: ${colors.primary};
     color: ${colors.bg};
@@ -53,14 +53,14 @@ const StyledSection = styled.section`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 20px;
+      gap: var(--gap-m);
     }
 
     .service-cards {
       flex: 2 0 0;
       display: flex;
       flex-flow: row wrap;
-      gap: 20px;
+      gap: var(--gap-m);
     }
 
     .service-card {
@@ -70,8 +70,8 @@ const StyledSection = styled.section`
 
       display: flex;
       flex-direction: column;
-      padding: 30px;
-      gap: 8px;
+      padding: var(--padding-l);
+      gap: var(--gap-xs);
 
       background: ${colors.bg};
       color: ${colors.main};
@@ -91,6 +91,31 @@ const StyledSection = styled.section`
       h4 {
         flex: 1 0 0;
       }
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    .card {
+      flex-direction: column;
+    }
+
+    .description {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (max-width: 719px) {
+    .card {
+      margin: 0 calc(0px - var(--padding-xl));
+    }
+
+    .description {
+      font-size: 20px;
+    }
+
+    .service-card {
+      min-width: 80% !important;
+      color: red;
     }
   }
 `;

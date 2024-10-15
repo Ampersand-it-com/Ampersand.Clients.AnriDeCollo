@@ -1,20 +1,17 @@
-import { useRef, useState } from "react";
-
-import Button from "../ui/Button";
-import ArrowLeft from "../../assets/icons/arrow-left.svg?react";
-import ArrowRight from "../../assets/icons/arrow-right.svg?react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import styled from "styled-components";
 import { colors, hexa } from "../../helpers/styleSetup";
 
-const RawHistorySlider = ({ className, children, ...props }) => {
-  const swiperRef = useRef(null);
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
-
+const RawHistorySlider = ({
+  setIsBeginning,
+  setIsEnd,
+  className,
+  children,
+  swiperRef,
+  ...props
+}) => {
   return (
     <Swiper
       className={"slider " + className}
@@ -40,23 +37,6 @@ const RawHistorySlider = ({ className, children, ...props }) => {
       }}
       {...props}
     >
-      <div slot="container-start" className="arrows">
-        <Button
-          variant="borderInverted"
-          onClick={() => swiperRef.current?.slidePrev()}
-          disabled={isBeginning}
-        >
-          <ArrowLeft />
-        </Button>
-        <Button
-          variant="borderInverted"
-          onClick={() => swiperRef.current?.slideNext()}
-          disabled={isEnd}
-        >
-          <ArrowRight />
-        </Button>
-      </div>
-
       {children.map((child, index) => (
         <SwiperSlide key={index}>{child}</SwiperSlide>
       ))}
@@ -76,12 +56,6 @@ const HistorySlider = styled(RawHistorySlider)`
     /* position: relative; */
   }
 
-  .arrows {
-    display: flex;
-    flex-direction: row;
-    gap: var(--gap-s);
-  }
-
   .description {
     width: 100%;
     height: 7lh;
@@ -91,7 +65,7 @@ const HistorySlider = styled(RawHistorySlider)`
   .pagination {
     display: flex;
     flex-direction: row;
-    gap: var(--gap-s);
+    gap: var(--gap-xs);
   }
 
   .bullet {
@@ -102,6 +76,18 @@ const HistorySlider = styled(RawHistorySlider)`
 
     &.active {
       background: ${colors.bg};
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    .description {
+      height: 4lh;
+    }
+  }
+
+  @media screen and (max-width: 719px) {
+    .description {
+      height: 8lh;
     }
   }
 `;

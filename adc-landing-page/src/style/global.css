@@ -32,7 +32,7 @@ body {
   font-family: "FixelDisplay", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 em {
@@ -46,7 +46,7 @@ em {
 
 .text {
   font-size: 16px;
-  line-height: 1.3;
+  line-height: 1.25;
   opacity: 0.8;
 }
 
@@ -70,10 +70,91 @@ h4,
   line-height: 1.2;
 }
 
+@media screen and (max-width: 1199px) {
+  h2,
+  .h2 {
+    font-size: 40px;
+  }
+
+  h3,
+  .h3 {
+    font-size: 32px;
+  }
+
+  h4,
+  .h4 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  h2,
+  .h2 {
+    font-size: 32px;
+  }
+
+  h3,
+  .h3 {
+    font-size: 24px;
+  }
+
+  h4,
+  .h4 {
+    font-size: 20px;
+  }
+
+  .lead {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
 /* Variables */
+
 body {
-  --gap-s: 8px;
-  --gap-l: 20px;
+  --gap-xl: 50px;
+  --gap-l: 32px;
+  --gap-m: 20px;
+  --gap-s: 16px;
+  --gap-xs: 8px;
+
+  --padding-xl: 50px;
+  --padding-l: 32px;
+  --padding-m: 20px;
+  --padding-s: 16px;
+  --padding-xs: 8px;
+}
+
+@media screen and (max-width: 1199px) {
+  body {
+    --gap-xl: 20px;
+    --gap-l: 20px;
+    --gap-m: 20px;
+    --gap-s: 12px;
+    --gap-xs: 8px;
+
+    --padding-xl: 20px;
+    --padding-l: 20px;
+    --padding-m: 20px;
+    --padding-s: 16px;
+    --padding-xs: 8px;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  body {
+    --gap-xl: 20px;
+    --gap-l: 20px;
+    --gap-m: 16px;
+    --gap-s: 12px;
+    --gap-xs: 8px;
+
+    --padding-xl: 20px;
+    --padding-l: 16px;
+    --padding-m: 16px;
+    --padding-s: 12px;
+    --padding-xs: 8px;
+  }
 }
 
 /* Features */
@@ -105,4 +186,14 @@ body {
 
 .pswp__button--zoom {
   display: none !important;
+}
+
+/* Hide scrollbar */
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }

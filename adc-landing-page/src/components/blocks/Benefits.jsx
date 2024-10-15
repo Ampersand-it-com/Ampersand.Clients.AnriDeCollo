@@ -13,6 +13,7 @@ import ArrowRight from "../../assets/icons/arrow-right.svg?react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
+import useResponsive from "../../hooks/useResponsive";
 
 const Benefits = () => {
   const { localized } = useLocalization();
@@ -20,6 +21,8 @@ const Benefits = () => {
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+
+  const screen = useResponsive();
 
   return (
     <StyledSection id="benefits">
@@ -46,7 +49,7 @@ const Benefits = () => {
         className="slider"
         modules={[Navigation]}
         spaceBetween={20}
-        slidesPerView={4}
+        slidesPerView={screen === "mobile" ? 1 : screen === "tablet" ? 2 : 4}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
           setIsBeginning(swiper.isBeginning);
@@ -78,7 +81,7 @@ const Benefits = () => {
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--padding-m);
 
   .title-block {
     display: flex;
@@ -90,15 +93,20 @@ const StyledSection = styled.section`
   .arrows {
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: var(--gap-xs);
   }
 
   .slider {
     width: 100%;
     overflow: visible;
+  }
 
-    .swiper-wrapper {
-    }
+  @media screen and (max-width: 1199px) {
+    /* .slider {
+      align-self: flex-start;
+      width: calc(100% - 40px);
+      margin-right: 40px !important;
+    } */
   }
 `;
 
@@ -113,12 +121,12 @@ const Benefit = ({ index, title, description }) => (
 );
 
 const BenefitContainer = styled.div`
-  height: 304px;
+  height: 324px;
 
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  gap: 20px;
+  padding: var(--padding-m);
+  gap: var(--gap-m);
 
   background: ${colors.tile};
 
@@ -129,6 +137,10 @@ const BenefitContainer = styled.div`
 
   h4 {
     flex: 1 0 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 300px;
   }
 `;
 

@@ -1,9 +1,26 @@
 import styled, { css } from "styled-components";
 import { colors, hexa } from "../../helpers/styleSetup";
 
-const Tab = ({ children, className, active, ...props }) => {
+const Tab = ({
+  children,
+  className,
+  active,
+  clickEffect,
+  onClick,
+  ...props
+}) => {
+  const handleClick = (e) => {
+    onClick && onClick(e);
+    clickEffect && clickEffect(e);
+  };
+
   return (
-    <StyledTab className={"tab " + className} $active={active} {...props}>
+    <StyledTab
+      className={"tab " + className}
+      $active={active}
+      onClick={handleClick}
+      {...props}
+    >
       {children}
     </StyledTab>
   );

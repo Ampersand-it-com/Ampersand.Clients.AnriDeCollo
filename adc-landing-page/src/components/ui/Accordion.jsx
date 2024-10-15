@@ -37,7 +37,7 @@ const Accordion = ({ index = 0, title, children }) => {
 
 const AccordionWrapper = styled.div`
   overflow: hidden;
-  padding: 18px 0;
+  padding: var(--padding-s) 0;
 
   border-bottom: 1px solid ${hexa(colors.main, 20)};
 `;
@@ -45,10 +45,9 @@ const AccordionWrapper = styled.div`
 const AccordionHeader = styled.div`
   display: flex;
   align-items: center;
-  padding: 18px 0;
-  margin: -18px 0;
+  padding: var(--padding-s) 0;
+  margin: calc(0px - var(--padding-s)) 0;
   cursor: pointer;
-  transition: background-color 0.3s;
 
   .index {
     width: 50px;
@@ -56,6 +55,7 @@ const AccordionHeader = styled.div`
 
   h3 {
     flex: 1 0 0;
+    margin-right: var(--gap-s);
   }
 `;
 
@@ -65,11 +65,15 @@ const AccordionContent = styled.div`
     $isOpen ? `${$maxHeight + 8}px` : "0"};
   overflow: hidden;
   transition: max-height 0.5s ease;
+
+  @media screen and (max-width: 1199px) {
+    padding: 8px 0 0;
+  }
 `;
 
 const IconWrapper = styled.div`
   svg {
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
     transform: ${({ $isOpen }) => ($isOpen ? "scale(1, -1)" : "scale(1, 1)")};
   }
 `;

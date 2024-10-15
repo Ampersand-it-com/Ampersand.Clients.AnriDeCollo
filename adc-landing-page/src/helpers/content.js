@@ -12,24 +12,23 @@ import serviceIcon2 from "../assets/icons/leather.svg";
 import serviceIcon3 from "../assets/icons/leather-cutter.svg";
 import serviceIcon4 from "../assets/icons/sewing.svg";
 import review1 from "../assets/img/review-1.webp";
-import logoFull from "../assets/icons/logo_full.svg";
 
 export default {
   header: {
     logo: "ADC",
     navigation: [
-      { ukr: "Про нас", eng: "About us", href: "#about-us" },
+      { ukr: "Про нас", eng: "About us", href: "#about" },
       { ukr: "Переваги", eng: "Benefits", href: "#benefits" },
       { ukr: "Послуги", eng: "Services", href: "#services" },
       { ukr: "Продукція", eng: "Products", href: "#products" },
-      { ukr: "Відгуки", eng: "Кумшуці", href: "#reviews" },
+      { ukr: "Відгуки", eng: "Reviews", href: "#reviews" },
       { ukr: "FAQ", eng: "FAQ", href: "#faq" },
     ],
     locale: {
       ukr: "Укр",
       eng: "Eng",
     },
-    action: { ukr: "Контакти", eng: "Contacts" },
+    action: { ukr: "Контакти", eng: "Contacts", href: "#contact" },
   },
 
   main: {
@@ -40,8 +39,12 @@ export default {
       ukr: "Створюємо взуття, яке відповідає\nвашим найвищим очікуванням",
       eng: "Creating shoes that meet\nyour highest expectations",
     },
-    action: { urk: "Обговорити деталі", eng: "Discuss details" },
-    details: { ukr: "Детальніше", eng: "More details" },
+    action: {
+      urk: "Обговорити деталі",
+      eng: "Discuss details",
+      href: "#contact",
+    },
+    details: { ukr: "Детальніше", eng: "More details", href: "#features" },
     img1: girls1,
     img2: products1,
   },
@@ -78,7 +81,7 @@ export default {
 
   about: {
     title: { ukr: "Про нас", eng: "About Us" },
-    action: { ukr: "Сконтактуйся", eng: "Contact Us" },
+    action: { ukr: "Сконтактуйся", eng: "Contact Us", href: "#contact" },
     description: {
       ukr: "Ми – це команда талановитих і відданих своїй справі професіоналів, які щодня створюють якісне та стильне взуття. Уже 7 років Anri De Collo забезпечує виробництво взуття для різних брендів. Ми відповідаємо за повний цикл: від перших ескізів до фінальної перевірки якості. Кожен етап під нашим контролем, щоб ви отримали надійний продукт, готовий до ринку.",
       eng: "We are a team of talented and dedicated professionals who create high-quality and stylish footwear every day. For 7 years, Anri De Collo has been producing footwear for various brands. We handle the entire cycle: from the initial sketches to the final quality check. Every stage is under our control to ensure you receive a reliable product ready for the market.",
@@ -226,7 +229,11 @@ export default {
     title: { ukr: "Продукція", eng: "Products" },
     caption: { ukr: "Більше інформації", eng: "More information" },
     email: "anridecollo@gmail.com",
-    action: { ukr: "Завантажити каталог", eng: "Download catalog" },
+    action: {
+      ukr: "Завантажити каталог",
+      eng: "Download catalog",
+      href: "https://i1.sndcdn.com/avatars-luSGlENMlsU49DXk-quZaGw-t500x500.jpg",
+    },
     slides: [
       {
         img: products1,
@@ -319,7 +326,7 @@ export default {
 
   faq: {
     title: { ukr: "FAQ", eng: "FAQ" },
-    action: { ukr: "Сконтактуйся", eng: "Contact Us" },
+    action: { ukr: "Сконтактуйся", eng: "Contact Us", href: "#contact" },
     items: [
       {
         title: { ukr: "Доставка", eng: "Delivery" },
@@ -402,6 +409,19 @@ export default {
         { eng: "Facebook", ukr: "Facebook", href: "https://www.facebook.com/" },
       ],
     ],
-    logo: logoFull,
+  },
+  common: {
+    formFeedbackSuccess: {
+      ukr: "Дякуємо за звернення 😊",
+      en: "Thank you for reaching out 😊",
+    },
+    formFeedbackFailure: {
+      ukr: "Сталася помилка. Форма не була відправлена",
+      en: "An error occurred. The form was not submitted",
+    },
+    formFeedbackAction: {
+      ukr: "Спробувати знову",
+      en: "Try again",
+    },
   },
 };
