@@ -1,7 +1,17 @@
-export function smoothScrollTo(selector) {
-  document.querySelector(selector).scrollIntoView({
-    behavior: "smooth",
-  });
+export function smoothScrollTo(selector, offset = 50) {
+  const root = document.querySelector("#root");
+  const element = document.querySelector(selector);
+
+  if (element) {
+    const elementPosition =
+      element.getBoundingClientRect().top + root.scrollTop;
+    const offsetPosition = elementPosition - offset;
+
+    document.querySelector("#root").scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
 }
 
 // export function download(url, filename) {

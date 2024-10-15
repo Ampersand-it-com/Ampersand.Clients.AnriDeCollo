@@ -54,11 +54,12 @@ function Main() {
 }
 
 const StyledSection = styled.section`
-  display: flex;
-  flex-direction: row;
-
+  /* margin-top: 72px; */
   min-height: 720px;
   height: calc(100vh - 72px);
+
+  display: flex;
+  flex-direction: row;
 
   & > div {
     position: relative;
@@ -129,11 +130,24 @@ const StyledSection = styled.section`
   }
 
   @media screen and (max-width: 1199px) {
+    /* margin-top: 56px; */
     height: calc(100vh - 56px);
     min-height: 560px;
   }
 
+  @media screen and (max-width: 959px) {
+    .left .bg {
+      transform: scale(1.25) translate(0, -10%);
+    }
+
+    .action {
+      align-self: stretch;
+    }
+  }
+
   @media screen and (max-width: 719px) {
+    min-height: 560px;
+
     .left .bg {
       transform: scale(1.5) translate(0, -15%);
     }

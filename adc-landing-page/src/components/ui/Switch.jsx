@@ -28,12 +28,13 @@ const StyledSwitch = styled.div`
   user-select: none;
 
   & .separator {
+    margin: -4px;
     color: ${hexa(colors.main, 30)};
   }
 `;
 
 const Option = styled.span`
-  padding: 8px;
+  padding: 16px;
 
   color: ${hexa(colors.main, 30)};
   transition: color 0.2s ease;

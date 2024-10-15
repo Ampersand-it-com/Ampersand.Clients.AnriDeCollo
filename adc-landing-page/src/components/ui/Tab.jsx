@@ -30,7 +30,7 @@ const StyledTab = styled.a`
   position: relative;
   flex-shrink: 0;
 
-  padding: 18px 16px;
+  padding: 16px;
 
   color: ${colors.main};
   cursor: pointer;

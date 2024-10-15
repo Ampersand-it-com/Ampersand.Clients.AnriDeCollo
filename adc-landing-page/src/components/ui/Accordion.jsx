@@ -13,7 +13,7 @@ const Accordion = ({ index = 0, title, children }) => {
     if (contentRef.current) {
       setContentHeight(contentRef.current.scrollHeight);
     }
-  }, [isOpen]); // обновляем высоту при открытии/закрытии
+  }, [isOpen]);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);

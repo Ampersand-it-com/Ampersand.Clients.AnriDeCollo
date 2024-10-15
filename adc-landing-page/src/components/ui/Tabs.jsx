@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const Tabs = ({ children }) => {
+const Tabs = ({ children, ...props }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
@@ -9,7 +9,7 @@ const Tabs = ({ children }) => {
   };
 
   return (
-    <StyledTabs>
+    <StyledTabs {...props}>
       {children.map((child, index) => {
         return React.cloneElement(child, {
           active: activeTab === index,
