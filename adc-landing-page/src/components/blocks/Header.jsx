@@ -122,7 +122,11 @@ const HeaderContent = ({ handleTabClick }) => {
     <>
       <Tabs className="tabs">
         {content.header.navigation.map((el, index) => (
-          <Tab onClick={(e) => handleTabClick(e, el.href)} key={index}>
+          <Tab
+            onClick={(e) => handleTabClick(e, el.href)}
+            href={el.href}
+            key={index}
+          >
             {localized("header.navigation." + index)}
           </Tab>
         ))}

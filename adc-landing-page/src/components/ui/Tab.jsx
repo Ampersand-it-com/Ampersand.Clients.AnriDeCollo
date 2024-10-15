@@ -1,23 +1,18 @@
 import styled, { css } from "styled-components";
 import { colors, hexa } from "../../helpers/styleSetup";
+import { useActiveSection } from "../../helpers/activeNavigation";
 
-const Tab = ({
-  children,
-  className,
-  active,
-  clickEffect,
-  onClick,
-  ...props
-}) => {
+const Tab = ({ children, className, onClick, href, ...props }) => {
+  const { activeSection } = useActiveSection();
+
   const handleClick = (e) => {
     onClick && onClick(e);
-    clickEffect && clickEffect(e);
   };
 
   return (
     <StyledTab
       className={"tab " + className}
-      $active={active}
+      $active={activeSection === href.substring(1)}
       onClick={handleClick}
       {...props}
     >

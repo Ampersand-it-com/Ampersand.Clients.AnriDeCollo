@@ -4,16 +4,20 @@ import Button from "../ui/Button";
 import { sizes } from "../../helpers/styleSetup";
 import { smoothScrollTo } from "../../helpers/common";
 import content from "../../helpers/content";
+import { useSectionObserver } from "../../helpers/activeNavigation";
 
 const About = () => {
   const { localized } = useLocalization();
+
+  const id = "about";
+  const ref = useSectionObserver(id);
 
   const handleActionClick = () => {
     smoothScrollTo(content.about.action.href);
   };
 
   return (
-    <StyledSection id="about">
+    <StyledSection id={id} ref={ref}>
       <div className="titleBlock">
         <h2>{localized("about.title")}</h2>
         <Button onClick={handleActionClick}>{localized("about.action")}</Button>

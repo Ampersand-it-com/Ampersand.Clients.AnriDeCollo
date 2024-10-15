@@ -14,18 +14,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import useResponsive from "../../hooks/useResponsive";
+import { useSectionObserver } from "../../helpers/activeNavigation";
 
 const Benefits = () => {
   const { localized } = useLocalization();
+  const screen = useResponsive();
+
+  const id = "benefits";
+  const ref = useSectionObserver(id);
 
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
-  const screen = useResponsive();
-
   return (
-    <StyledSection id="benefits">
+    <StyledSection id={id} ref={ref}>
       <div className="title-block">
         <h2>{localized("benefits.title")}</h2>
         <div className="arrows">

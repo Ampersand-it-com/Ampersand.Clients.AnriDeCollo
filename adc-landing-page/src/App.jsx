@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { LocalizationProvider, useLocalization } from "./helpers/localization";
 import styled from "styled-components";
 
@@ -17,13 +17,20 @@ import Footer from "./components/blocks/Footer";
 import FAQ from "./components/blocks/FAQ";
 import Workflow from "./components/blocks/Workflow";
 import { breakpoints } from "./helpers/styleSetup";
+import { ActiveSectionProvider } from "./helpers/activeNavigation";
 
 function App() {
+  // Locale
+
   const { setLocale } = useLocalization();
 
   useEffect(() => {
     setLocale("ukr");
   }, [setLocale]);
+
+  // Active navigation
+
+  const [activeSection, setActiveSection] = useState("main");
 
   return (
     <AppContainer className="app">
@@ -78,7 +85,9 @@ const AppContainer = styled.div`
 export default function AppWrapper() {
   return (
     <LocalizationProvider>
-      <App />
+      <ActiveSectionProvider>
+        <App />
+      </ActiveSectionProvider>
     </LocalizationProvider>
   );
 }

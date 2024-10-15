@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import { useLocalization } from "../../helpers/localization";
 import { colors, hexa } from "../../helpers/styleSetup";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { useSectionObserver } from "../../helpers/activeNavigation";
 
 const Features = () => {
   const { localized } = useLocalization();
 
+  const id = "features";
+
   return (
-    <StyledSection id="features" className="no-scrollbar">
+    <StyledSection id={id} className="no-scrollbar">
       <Feature
         title={localized("features.0.title")}
         description={localized("features.0.description")}

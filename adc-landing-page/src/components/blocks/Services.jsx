@@ -2,12 +2,16 @@ import styled from "styled-components";
 import { useLocalization } from "../../helpers/localization";
 import content from "../../helpers/content";
 import { colors, hexa } from "../../helpers/styleSetup";
+import { useSectionObserver } from "../../helpers/activeNavigation";
 
 const Services = () => {
   const { localized } = useLocalization();
 
+  const id = "services";
+  const ref = useSectionObserver(id);
+
   return (
-    <StyledSection id="services">
+    <StyledSection id={id} ref={ref}>
       <h2>{localized("services.title")}</h2>
       <div className="card">
         <div className="text-block">

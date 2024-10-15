@@ -7,18 +7,21 @@ import { smoothScrollTo } from "../../helpers/common";
 import TitleUkr from "../../assets/svg/title-ukr.svg?react";
 import TitleEng from "../../assets/svg/title-eng.svg?react";
 import useResponsive from "../../hooks/useResponsive";
+import { useSectionObserver } from "../../helpers/activeNavigation";
 
 function Main() {
   const { locale, localized } = useLocalization();
-
   const screen = useResponsive();
+
+  const id = "main";
+  const ref = useSectionObserver(id);
 
   const handleButtonClick = (href) => {
     smoothScrollTo(href);
   };
 
   return (
-    <StyledSection id="main">
+    <StyledSection id={id} ref={ref}>
       <div className="left">
         {locale == "ukr" ? (
           <TitleUkr className="title-svg" />

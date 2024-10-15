@@ -1,21 +1,22 @@
 import content from "../../helpers/content";
 import { useLocalization } from "../../helpers/localization";
-import { colors, hexa } from "../../helpers/styleSetup";
+import { colors } from "../../helpers/styleSetup";
 import styled from "styled-components";
-import authData from "../../../authData";
 import FormFeedback from "../parts/formFeedback";
 import ContactForm from "../parts/ContactForm";
 import { useState } from "react";
-import useResponsive from "../../hooks/useResponsive";
+import { useSectionObserver } from "../../helpers/activeNavigation";
 
 function Contact() {
   const { localized } = useLocalization();
-  const screen = useResponsive();
+
+  const id = "contact";
+  const ref = useSectionObserver(id);
 
   const [formStatus, setFormStatus] = useState("unsent");
 
   return (
-    <StyledSection id="contact">
+    <StyledSection id={id} ref={ref}>
       <div className="card">
         <div className="header">
           <h3>{localized("contact.title")}</h3>

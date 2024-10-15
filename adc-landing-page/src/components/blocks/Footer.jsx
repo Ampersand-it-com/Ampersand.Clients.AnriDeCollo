@@ -1,17 +1,27 @@
 import styled from "styled-components";
 import { useLocalization } from "../../helpers/localization";
 import content from "../../helpers/content";
-import { colors, hexa } from "../../helpers/styleSetup";
+import { colors } from "../../helpers/styleSetup";
 import LogoFull from "../../assets/svg/logo_full.svg?react";
 import StyledLogo from "../parts/Logo";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
+import { useSectionObserver } from "../../helpers/activeNavigation";
+import { smoothScrollTo } from "../../helpers/common";
 
 const Footer = () => {
   const { localized } = useLocalization();
 
+  const id = "footer";
+  const ref = useSectionObserver(id);
+
+  // TODO
+  // const handleLinkClick = (href) => {
+  //   smoothScrollTo(href);
+  // }
+
   return (
-    <StyledFooter>
+    <StyledFooter id={id} ref={ref}>
       <div className="main">
         <div className="part form">
           <StyledLogo />
@@ -144,6 +154,12 @@ const StyledFooter = styled.footer`
   }
 
   @media screen and (max-width: 719px) {
+    .part.form {
+      form .row {
+        flex-direction: column;
+      }
+    }
+
     .part.info {
       .row {
         flex-direction: column;

@@ -1,20 +1,23 @@
 import styled from "styled-components";
 import { useLocalization } from "../../helpers/localization";
 import Button from "../ui/Button";
-import { sizes } from "../../helpers/styleSetup";
 import content from "../../helpers/content";
 import Accordion from "../ui/Accordion";
 import { smoothScrollTo } from "../../helpers/common";
+import { useSectionObserver } from "../../helpers/activeNavigation";
 
 const FAQ = () => {
   const { localized } = useLocalization();
+
+  const id = "faq";
+  const ref = useSectionObserver(id);
 
   const handleActionClick = () => {
     smoothScrollTo(content.faq.action.href);
   };
 
   return (
-    <StyledSection id="faq">
+    <StyledSection id={id} ref={ref}>
       <div className="titleBlock">
         <h2>{localized("faq.title")}</h2>
         <Button onClick={handleActionClick}>{localized("faq.action")}</Button>

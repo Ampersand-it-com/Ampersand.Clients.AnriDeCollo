@@ -2,25 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const Tabs = ({ children, ...props }) => {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const handleTabClick = (index) => {
-    setActiveTab(index);
-  };
-
-  return (
-    <StyledTabs {...props}>
-      {children.map((child, index) => {
-        return React.cloneElement(child, {
-          active: activeTab === index,
-          clickEffect: () => {
-            handleTabClick(index);
-          },
-          key: index,
-        });
-      })}
-    </StyledTabs>
-  );
+  return <StyledTabs {...props}>{children}</StyledTabs>;
 };
 
 const StyledTabs = styled.nav`

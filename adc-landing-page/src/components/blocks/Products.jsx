@@ -7,17 +7,21 @@ import styled from "styled-components";
 import Product from "../parts/Product";
 import { download } from "../../helpers/common";
 import useResponsive from "../../hooks/useResponsive";
+import { useSectionObserver } from "../../helpers/activeNavigation";
 
 function Products() {
   const { localized } = useLocalization();
   const screen = useResponsive();
+
+  const id = "products";
+  const ref = useSectionObserver(id);
 
   const handleActionClick = (url) => {
     download(url, "catalog");
   };
 
   return (
-    <StyledSection id="products">
+    <StyledSection id={id} ref={ref}>
       <div className="title-block">
         <h2>{localized("products.title")}</h2>
         <div className="caption-block">
