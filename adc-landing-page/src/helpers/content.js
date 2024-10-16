@@ -232,7 +232,7 @@ export default {
     action: {
       ukr: "Завантажити каталог",
       eng: "Download catalog",
-      href: "https://i1.sndcdn.com/avatars-luSGlENMlsU49DXk-quZaGw-t500x500.jpg",
+      href: "public/pdf/shoes-presentation.pdf",
     },
     slides: [
       {
