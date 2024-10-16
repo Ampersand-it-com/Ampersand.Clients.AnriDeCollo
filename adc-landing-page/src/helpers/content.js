@@ -232,7 +232,8 @@ export default {
     action: {
       ukr: "Завантажити каталог",
       eng: "Download catalog",
-      href: "public/pdf/shoes-presentation.pdf",
+      href: "/pdf/shoes-presentation.pdf",
+      previewUrl: "https://firebasestorage.googleapis.com/v0/b/anridecolloweb.appspot.com/o/shoes-presentation.pdf?alt=media&token=006d8b72-7c13-4110-89d4-a7ab17ea2f27",
     },
     slides: [
       {

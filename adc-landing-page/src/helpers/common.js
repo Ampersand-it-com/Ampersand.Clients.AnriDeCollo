@@ -24,6 +24,9 @@ export function smoothScrollTo(selector, offset = 50) {
 //   document.body.removeChild(element);
 // }
 
+export function openInNewTab (url) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+};
 export function download(url, filename) {
   fetch(url)
     .then((response) => {

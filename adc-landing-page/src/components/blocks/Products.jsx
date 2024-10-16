@@ -5,7 +5,7 @@ import { colors, hexa } from "../../helpers/styleSetup";
 import Button from "../ui/Button";
 import styled from "styled-components";
 import Product from "../parts/Product";
-import { download } from "../../helpers/common";
+import { download, openInNewTab } from "../../helpers/common";
 import useResponsive from "../../hooks/useResponsive";
 import { useSectionObserver } from "../../helpers/activeNavigation";
 
@@ -16,8 +16,9 @@ function Products() {
   const id = "products";
   const ref = useSectionObserver(id);
 
-  const handleActionClick = (url) => {
-    download(url, "catalog");
+    const handleActionClick = (url, previewUrl) => {
+        download(url, "catalog");
+        openInNewTab(previewUrl);
   };
 
   return (
@@ -34,7 +35,7 @@ function Products() {
       {screen === "tablet" && (
         <Button
           className="mobile-action"
-          onClick={(e) => handleActionClick(content.products.action.href)}
+                  onClick={(e) => handleActionClick(content.products.action.href, content.products.action.previewUrl )}
         >
           {localized("products.action")}
         </Button>
@@ -56,7 +57,7 @@ function Products() {
                 (screen === "desktop" || screen === "ultrawide") && (
                   <Button
                     onClick={(e) =>
-                      handleActionClick(content.products.action.href)
+                              handleActionClick(content.products.action.href, content.products.action.previewUrl)
                     }
                   >
                     {localized("products.action")}
@@ -69,7 +70,7 @@ function Products() {
       {screen === "mobile" && (
         <Button
           className="mobile-action"
-          onClick={(e) => handleActionClick(content.products.action.href)}
+                  onClick={(e) => handleActionClick(content.products.action.href, content.products.action.previewUrl)}
         >
           {localized("products.action")}
         </Button>
