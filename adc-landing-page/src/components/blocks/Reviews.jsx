@@ -12,7 +12,7 @@ import ArrowRight from "../../assets/icons/arrow-right.svg?react";
 import Quotes from "../../assets/icons/quotes.svg?react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import useResponsive from "../../hooks/useResponsive";
 import { useSectionObserver } from "../../helpers/activeNavigation";
@@ -36,14 +36,12 @@ const Reviews = () => {
           <Button
             variant="border"
             onClick={() => swiperRef.current?.slidePrev()}
-            disabled={isBeginning}
           >
             <ArrowLeft />
           </Button>
           <Button
             variant="border"
             onClick={() => swiperRef.current?.slideNext()}
-            disabled={isEnd}
           >
             <ArrowRight />
           </Button>
@@ -51,8 +49,14 @@ const Reviews = () => {
       </div>
       <Swiper
         className="slider"
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         spaceBetween={20}
+        speed={1000}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: true,
+        }}
         slidesPerView={screen === "mobile" ? 1 : screen === "tablet" ? 2 : 3}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;

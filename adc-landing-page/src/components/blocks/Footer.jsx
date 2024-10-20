@@ -4,16 +4,19 @@ import content from "../../helpers/content";
 import { colors } from "../../helpers/styleSetup";
 import LogoFull from "../../assets/svg/logo_full.svg?react";
 import StyledLogo from "../parts/Logo";
-import Button from "../ui/Button";
-import Input from "../ui/Input";
 import { useSectionObserver } from "../../helpers/activeNavigation";
 import { smoothScrollTo } from "../../helpers/common";
+import FooterForm from "../parts/FooterForm";
+import FormFeedback from "../parts/formFeedback";
+import { useState } from "react";
 
 const Footer = () => {
   const { localized } = useLocalization();
 
   const id = "footer";
   const ref = useSectionObserver(id);
+
+  const [formStatus, setFormStatus] = useState("unsent");
 
   // TODO
   // const handleLinkClick = (href) => {
@@ -25,15 +28,15 @@ const Footer = () => {
       <div className="main">
         <div className="part form">
           <StyledLogo />
-          <form>
-            <h4>{localized("footer.form.cta")}</h4>
-            <div className="row">
-              <Input placeholder={localized("footer.form.input")} />
-              <Button variant="inverted">
-                {localized("footer.form.action")}
-              </Button>
-            </div>
-          </form>
+          {formStatus == "unsent" ? (
+            <FooterForm setStatus={setFormStatus} />
+          ) : (
+            <FormFeedback
+              className="form-feedback"
+              status={formStatus}
+              action={() => setFormStatus("unsent")}
+            />
+          )}
         </div>
         <div className="part info">
           <p className="h4 description">{localized("about.description")}</p>
@@ -86,7 +89,7 @@ const StyledFooter = styled.footer`
     align-items: start;
 
     form {
-      width: calc((100vw - 50px * 2 + 20px * 2) * 0.333);
+      width: ${({ theme }) => theme.grid(4)}px;
       display: flex;
       flex-direction: column;
       gap: var(--gap-m);
@@ -100,6 +103,10 @@ const StyledFooter = styled.footer`
       .input {
         flex: 1 0 0;
       }
+    }
+
+    .form-feedback {
+      align-items: flex-start !important;
     }
   }
 
@@ -130,6 +137,14 @@ const StyledFooter = styled.footer`
   .logo-full {
     width: 100%;
     height: auto;
+  }
+
+  @media screen and (min-width: 1920px) {
+    form {
+      width: calc(
+        (1920px - var(--padding-xl) * 2 + var(--gap-m) * 2) * 0.333
+      ) !important;
+    }
   }
 
   @media screen and (max-width: 1199px) {

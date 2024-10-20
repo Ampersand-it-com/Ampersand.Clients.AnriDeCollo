@@ -26,14 +26,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: var(--gap-m);
 
   p {
     text-align: center;
-  }
-
-  button {
-    align-self: center;
   }
 `;
 

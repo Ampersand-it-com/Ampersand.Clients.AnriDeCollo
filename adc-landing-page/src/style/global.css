@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: "NyghtSerif";
-  src: url("../assets/fonts/NyghtSerif-BoldItalic.woff2") format("woff2");
+  src: url("../assets/fonts/NyghtSerif-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
 }
@@ -37,6 +37,8 @@ body {
 
 em {
   font-family: "NyghtSerif";
+  font-weight: bold;
+  font-style: italic;
 }
 
 .lead {
@@ -53,6 +55,8 @@ em {
 h2,
 .h2 {
   font-family: "NyghtSerif";
+  font-weight: bold;
+  font-style: italic;
   font-size: 55px;
 }
 
@@ -182,6 +186,8 @@ body {
 
 .pswp__counter {
   font-family: "NyghtSerif";
+  font-weight: bold;
+  font-style: italic;
 }
 
 .pswp__button--zoom {

@@ -16,9 +16,9 @@ function Products() {
   const id = "products";
   const ref = useSectionObserver(id);
 
-    const handleActionClick = (url, previewUrl) => {
-        download(url, "catalog");
-        openInNewTab(previewUrl);
+  const handleActionClick = (url, previewUrl) => {
+    // download(url, "catalog");
+    openInNewTab(previewUrl);
   };
 
   return (
@@ -35,7 +35,12 @@ function Products() {
       {screen === "tablet" && (
         <Button
           className="mobile-action"
-                  onClick={(e) => handleActionClick(content.products.action.href, content.products.action.previewUrl )}
+          onClick={(e) =>
+            handleActionClick(
+              content.products.action.href,
+              content.products.action.previewUrl
+            )
+          }
         >
           {localized("products.action")}
         </Button>
@@ -57,7 +62,10 @@ function Products() {
                 (screen === "desktop" || screen === "ultrawide") && (
                   <Button
                     onClick={(e) =>
-                              handleActionClick(content.products.action.href, content.products.action.previewUrl)
+                      handleActionClick(
+                        content.products.action.href,
+                        content.products.action.previewUrl
+                      )
                     }
                   >
                     {localized("products.action")}
@@ -70,7 +78,12 @@ function Products() {
       {screen === "mobile" && (
         <Button
           className="mobile-action"
-                  onClick={(e) => handleActionClick(content.products.action.href, content.products.action.previewUrl)}
+          onClick={(e) =>
+            handleActionClick(
+              content.products.action.href,
+              content.products.action.previewUrl
+            )
+          }
         >
           {localized("products.action")}
         </Button>
@@ -109,7 +122,7 @@ const StyledSection = styled.section`
   .products-container {
     display: flex;
     flex-flow: row wrap;
-    gap: var(--gap-xs);
+    gap: var(--gap-m);
 
     & > * {
       flex: 1 0 0;
@@ -121,7 +134,8 @@ const StyledSection = styled.section`
 
           .main {
             align-self: flex-start;
-            width: calc((100vw - (100px + 3 * 20px)) * 0.25);
+            /* width: calc((100vw - (100px + 3 * 20px)) * 0.25); */
+            width: ${({ theme }) => theme.grid(3)}px;
           }
         }
 

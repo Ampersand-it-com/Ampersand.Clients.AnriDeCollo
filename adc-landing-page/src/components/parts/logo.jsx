@@ -8,6 +8,8 @@ const Logo = ({ className, ...props }) => (
 
 const StyledLogo = styled(Logo)`
   font-family: "NyghtSerif";
+  font-weight: bold;
+  font-style: italic;
   font-size: 42px;
   line-height: 1;
 `;

@@ -7,6 +7,8 @@ const RawIndex = ({ className, index }) => (
 
 const Index = styled(RawIndex)`
   font-family: "NyghtSerif";
+  font-weight: bold;
+  font-style: italic;
   color: ${hexa(colors.main, 50)};
 `;
 

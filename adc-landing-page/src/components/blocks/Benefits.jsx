@@ -11,7 +11,7 @@ import ArrowLeft from "../../assets/icons/arrow-left.svg?react";
 import ArrowRight from "../../assets/icons/arrow-right.svg?react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import useResponsive from "../../hooks/useResponsive";
 import { useSectionObserver } from "../../helpers/activeNavigation";
@@ -35,14 +35,12 @@ const Benefits = () => {
           <Button
             variant="border"
             onClick={() => swiperRef.current?.slidePrev()}
-            disabled={isBeginning}
           >
             <ArrowLeft />
           </Button>
           <Button
             variant="border"
             onClick={() => swiperRef.current?.slideNext()}
-            disabled={isEnd}
           >
             <ArrowRight />
           </Button>
@@ -50,8 +48,14 @@ const Benefits = () => {
       </div>
       <Swiper
         className="slider"
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         spaceBetween={20}
+        speed={1000}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: true,
+        }}
         slidesPerView={screen === "mobile" ? 1 : screen === "tablet" ? 2 : 4}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
@@ -135,6 +139,8 @@ const BenefitContainer = styled.div`
 
   .index {
     font-family: "NyghtSerif";
+    font-weight: bold;
+    font-style: italic;
     color: ${hexa(colors.main, 50)};
   }
 

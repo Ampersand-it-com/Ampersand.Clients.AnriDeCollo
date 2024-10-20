@@ -115,6 +115,12 @@ const StyledForm = styled.form`
       flex: 1 0 0;
     }
   }
+
+  @media screen and (min-width: 720px) {
+    button {
+      align-self: flex-start;
+    }
+  }
 `;
 
 export default ContactForm;

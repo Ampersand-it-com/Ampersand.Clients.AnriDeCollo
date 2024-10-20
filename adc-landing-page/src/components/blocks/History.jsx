@@ -68,8 +68,9 @@ const StyledSection = styled.section`
   }
 
   .textBlock {
-    flex: 1 0 0;
-    min-width: 0px;
+    /* flex: 1 0 0;
+    min-width: 0px; */
+    width: ${({ theme }) => theme.grid(4) - theme.padding("xl")}px;
 
     display: flex;
     flex-direction: column;
@@ -103,6 +104,10 @@ const StyledSection = styled.section`
   @media screen and (max-width: 1199px) {
     .card {
       flex-direction: column;
+    }
+
+    .textBlock {
+      width: initial;
     }
 
     .title-block {

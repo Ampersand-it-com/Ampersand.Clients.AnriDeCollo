@@ -32,12 +32,10 @@ export default {
   },
 
   main: {
-    title: { ukr: "Ваш стиль", eng: "Your style" },
-    titleEmp: { ukr: "наш", eng: "our" },
-    titleEnd: { ukr: "витвір", eng: "creation" },
+    title: { ukr: "Ваш стиль наш витвір", eng: "Your style our creation" },
     description: {
-      ukr: "Створюємо взуття, яке відповідає\nвашим найвищим очікуванням",
-      eng: "Creating shoes that meet\nyour highest expectations",
+      ukr: "Створюємо взуття, яке відповідає вашим найвищим очікуванням",
+      eng: "Creating shoes that meet your highest expectations",
     },
     action: {
       urk: "Обговорити деталі",
@@ -51,7 +49,7 @@ export default {
 
   features: [
     {
-      title: { ukr: "Виробництво “під ключ”", eng: "Turnkey Production" },
+      title: { ukr: "Виробництво “під ключ”", eng: "Turnkey Production" },
       description: {
         ukr: "Ми надаємо можливість створити взуття під вашим брендом, використовуючи наші готові моделі. Ви можете обрати дизайн, а також внести зміни в матеріали, кольори, підошви та фурнітуру. Це спрощений спосіб започаткувати власний бренд взуття.",
         eng: "We offer the opportunity to create footwear under your brand using our ready-made models. You can choose the design and make adjustments to the materials, colors, soles, and fittings. This is a simplified way to start your own footwear brand.",
@@ -83,7 +81,7 @@ export default {
     title: { ukr: "Про нас", eng: "About Us" },
     action: { ukr: "Сконтактуйся", eng: "Contact Us", href: "#contact" },
     description: {
-      ukr: "Ми – це команда талановитих і відданих своїй справі професіоналів, які щодня створюють якісне та стильне взуття. Уже 7 років Anri De Collo забезпечує виробництво взуття для різних брендів. Ми відповідаємо за повний цикл: від перших ескізів до фінальної перевірки якості. Кожен етап під нашим контролем, щоб ви отримали надійний продукт, готовий до ринку.",
+      ukr: "Ми – це команда талановитих і відданих своїй справі професіоналів, які щодня створюють якісне та стильне взуття. Уже 7 років Anri De Collo забезпечує виробництво взуття для різних брендів. Ми відповідаємо за повний цикл: від перших ескізів до фінальної перевірки якості. Кожен етап під нашим контролем, щоб ви отримали надійний продукт, готовий до ринку.",
       eng: "We are a team of talented and dedicated professionals who create high-quality and stylish footwear every day. For 7 years, Anri De Collo has been producing footwear for various brands. We handle the entire cycle: from the initial sketches to the final quality check. Every stage is under our control to ensure you receive a reliable product ready for the market.",
     },
   },
@@ -233,7 +231,8 @@ export default {
       ukr: "Завантажити каталог",
       eng: "Download catalog",
       href: "/pdf/shoes-presentation.pdf",
-      previewUrl: "https://firebasestorage.googleapis.com/v0/b/anridecolloweb.appspot.com/o/shoes-presentation.pdf?alt=media&token=006d8b72-7c13-4110-89d4-a7ab17ea2f27",
+      previewUrl:
+        "https://firebasestorage.googleapis.com/v0/b/anridecolloweb.appspot.com/o/shoes-presentation-compressed.pdf?alt=media&token=33d26300-f10f-4b03-aba6-44a1fb37f7f4",
     },
     slides: [
       {
@@ -330,50 +329,83 @@ export default {
     action: { ukr: "Сконтактуйся", eng: "Contact Us", href: "#contact" },
     items: [
       {
-        title: { ukr: "Доставка", eng: "Delivery" },
+        title: {
+          ukr: "Яка вартість продукції?",
+          eng: "What is the price of the products?",
+        },
         description: {
-          ukr: 'Ми пропонуємо доставку по всій Україні за допомогою популярних кур\'єрських служб, таких як "Нова Пошта". Термін доставки зазвичай становить 1-3 робочі дні, залежно від вашого місцезнаходження. Після оформлення замовлення ви отримаєте трекінг-номер для відстеження. Оплата доставки здійснюється згідно з тарифами перевізника, але для замовлень на певну суму ми надаємо безкоштовну доставку.',
-          eng: 'We offer delivery across Ukraine using popular courier services such as "Nova Poshta". The delivery time usually takes 1-3 business days, depending on your location. After placing an order, you will receive a tracking number. Delivery payment is made according to the carrier’s rates, but we offer free delivery for orders over a certain amount.',
+          ukr: "Вартість залежить від обраного стилю, матеріалів і обсягу замовлення. Чим більший обсяг вашого замовлення, тим нижчою буде ціна. Зв’яжіться з нами для отримання найкращої пропозиції.",
+          eng: "The price depends on the chosen style, materials, and order volume. The larger your order, the lower the price. Contact us for the best offer.",
         },
       },
       {
         title: {
-          ukr: "Яка гарантія на взуття?",
-          eng: "What is the warranty on shoes?",
+          ukr: "Який мінімальний обсяг замовлення для оптової покупки та під власним брендом?",
+          eng: "What is the minimum order volume for wholesale and under your brand?",
         },
         description: {
-          ukr: "Яка гарантія на взуття?",
-          eng: "What is the warranty on shoes?",
+          ukr: "Мінімальне замовлення складає 10 пар одного кольору.",
+          eng: "The minimum order is 10 pairs of the same color.",
         },
       },
       {
         title: {
-          ukr: "Чи можна повернути або обміняти товар?",
-          eng: "Can I return or exchange a product?",
+          ukr: "Чи потрібна передоплата при розміщенні замовлення?",
+          eng: "Is prepayment required when placing an order?",
         },
         description: {
-          ukr: "Чи можна повернути або обміняти товар?",
-          eng: "Can I return or exchange a product?",
+          ukr: "Так, ми працюємо виключно по передоплаті. Розмір передоплати залежить від типу вашого замовлення.",
+          eng: "Yes, we work exclusively with prepayment. The prepayment amount depends on the type of your order.",
         },
       },
       {
         title: {
-          ukr: "Які способи оплати доступні?",
-          eng: "What payment methods are available?",
+          ukr: "Чи обов'язково оплачувати зразок?",
+          eng: "Is it necessary to pay for a sample?",
         },
         description: {
-          ukr: "Які способи оплати доступні?",
-          eng: "What payment methods are available?",
+          ukr: "У більшості випадків так, але вартість зразка може бути повернена після розміщення великого замовлення. У разі особливих обставин ви можете зв’язатися з нами для обговорення умов оплати зразка.",
+          eng: "In most cases, yes, but the sample cost may be refunded after placing a large order. In special circumstances, you can contact us to discuss sample payment terms.",
         },
       },
       {
         title: {
-          ukr: "Чи доступна міжнародна доставка?",
-          eng: "Is international shipping available?",
+          ukr: "Який час виготовлення замовлення?",
+          eng: "What is the production time for an order?",
         },
         description: {
-          ukr: "Чи доступна міжнародна доставка?",
-          eng: "Is international shipping available?",
+          ukr: "Зазвичай термін виготовлення становить від 21 до 35 днів. Потужність нашої фабрики — 10 000 пар на місяць, але для великих замовлень або особливих вимог уточнюйте терміни у нас.",
+          eng: "The production time usually ranges from 21 to 35 days. Our factory's capacity is 10,000 pairs per month, but for large orders or specific requirements, please check the timing with us.",
+        },
+      },
+      {
+        title: {
+          ukr: "Яка упаковка пропонується?",
+          eng: "What packaging is offered?",
+        },
+        description: {
+          ukr: "Ми можемо виготовити упаковку за вашими вимогами, включаючи брендування, логотип, колір і розмір. Ви маєте можливість налаштувати упаковку під свій бренд.",
+          eng: "We can produce packaging according to your requirements, including branding, logos, colors, and sizes. You can customize the packaging for your brand.",
+        },
+      },
+      {
+        title: {
+          ukr: "Чи є у вас програма лояльності?",
+          eng: "Do you have a loyalty program?",
+        },
+        description: {
+          ukr: "Так, у нас діє програма лояльності. Знижки розраховуються індивідуально і залежать від обсягу замовлення.",
+          eng: "Yes, we have a loyalty program. Discounts are calculated individually and depend on the order volume.",
+        },
+      },
+      {
+        title: {
+          ukr: "Як можна розмістити замовлення?",
+          eng: "How can I place an order?",
+        },
+        description: {
+          ukr: "Ви можете зробити замовлення через електронну пошту або за допомогою форми на нашому сайті.",
+          eng: "You can place an order via email or through the form on our website.",
         },
       },
     ],
@@ -381,8 +413,8 @@ export default {
 
   footer: {
     form: {
-      cta: { ukr: "Сконтактуйтеся з нами", eng: "Contact Us" },
-      input: { ukr: "Напишіть повідомлення", eng: "Write a message" },
+      cta: { ukr: "Залишайтеся в контакті з нами!", eng: "Keep in touch!" },
+      input: { eng: "Email" },
       action: { ukr: "Надіслати", eng: "Send" },
     },
     info: [
@@ -397,7 +429,6 @@ export default {
         { ukr: "Наше порфтоліо", eng: "Our Portfolio" },
         { ukr: "Продукція", eng: "Products", href: "#products" },
         { ukr: "Каталог", eng: "Catalog", href: "#products" },
-        { ukr: "Процес", eng: "Process", href: "#workflow" },
       ],
       [
         { ukr: "Соцмережі", eng: "Social Media" },

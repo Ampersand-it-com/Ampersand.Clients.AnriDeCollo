@@ -14,19 +14,10 @@ export function smoothScrollTo(selector, offset = 50) {
   }
 }
 
-// export function download(url, filename) {
-//   let element = document.createElement("a");
-//   element.setAttribute("href", url);
-//   filename && element.setAttribute("download", filename);
-//   document.body.appendChild(element);
-//   element.click();
+export function openInNewTab(url) {
+  window.open(url, "_blank", "noopener,noreferrer");
+}
 
-//   document.body.removeChild(element);
-// }
-
-export function openInNewTab (url) {
-    window.open(url, '_blank', 'noopener,noreferrer');
-};
 export function download(url, filename) {
   fetch(url)
     .then((response) => {

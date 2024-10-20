@@ -106,7 +106,7 @@ const StyledSection = styled.section`
     }
 
     .bg {
-      object-position: center 90%;
+      object-position: center 100%;
     }
   }
 
@@ -128,7 +128,7 @@ const StyledSection = styled.section`
 
   @media screen and (min-width: 1600px) {
     .left .bg {
-      object-position: center 80%;
+      object-position: center 90%;
     }
   }
 

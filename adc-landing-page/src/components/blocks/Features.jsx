@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { useLocalization } from "../../helpers/localization";
 import { colors, hexa } from "../../helpers/styleSetup";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { useSectionObserver } from "../../helpers/activeNavigation";
-
 const Features = () => {
   const { localized } = useLocalization();
 
@@ -73,6 +69,10 @@ const FeatureContainer = styled.div`
 
   background: ${colors.primary};
   color: ${colors.bg};
+
+  h4 {
+    text-transform: uppercase;
+  }
 
   p {
     color: ${hexa(colors.bg, 80)};

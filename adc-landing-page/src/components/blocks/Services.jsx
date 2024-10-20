@@ -53,7 +53,8 @@ const StyledSection = styled.section`
     color: ${colors.bg};
 
     .text-block {
-      flex: 1 0 0;
+      /* flex: 1 0 0; */
+      width: ${({ theme }) => theme.grid(4) - theme.padding("xl")}px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -101,6 +102,10 @@ const StyledSection = styled.section`
   @media screen and (max-width: 1199px) {
     .card {
       flex-direction: column;
+    }
+
+    .text-block {
+      width: initial !important;
     }
 
     .description {
