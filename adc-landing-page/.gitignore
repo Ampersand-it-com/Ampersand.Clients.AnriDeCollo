@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 garbage
+.firebase
+authData.js
 *.local
 
 # Editor directories and files

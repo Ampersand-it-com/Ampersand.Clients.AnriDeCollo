@@ -9,6 +9,11 @@ import TitleEng from "../../assets/svg/title-eng.svg?react";
 import useResponsive from "../../hooks/useResponsive";
 import { useSectionObserver } from "../../helpers/activeNavigation";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectCreative, Controller } from "swiper/modules";
+import "swiper/css";
+import { useRef } from "react";
+
 function Main() {
   const { locale, localized } = useLocalization();
   const screen = useResponsive();
@@ -19,6 +24,10 @@ function Main() {
   const handleButtonClick = (href) => {
     smoothScrollTo(href);
   };
+
+  // Dependend sliders
+  const swiper1Ref = useRef(null);
+  const swiper2Ref = useRef(null);
 
   return (
     <StyledSection id={id} ref={ref}>
@@ -38,7 +47,42 @@ function Main() {
             {localized("main.action")}
           </Button>
         </div>
-        <img className="bg" src={content.main.img1} alt="" />
+        <Swiper
+          className="slider"
+          speed={1000}
+          modules={[Autoplay, EffectCreative, Controller]}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          allowTouchMove={false}
+          noSwiping={true}
+          keyboard={false}
+          effect={"creative"}
+          creativeEffect={{
+            prev: {
+              shadow: false,
+              translate: [0, 0, -200],
+            },
+            next: {
+              translate: ["150%", 0, 0],
+            },
+          }}
+          onSwiper={(swiper) => (swiper1Ref.current = swiper)}
+          controller={{ control: swiper2Ref.current }}
+        >
+          {content.main.slider1.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img
+                className={"bg-image" + (index === 0 ? " butt-text" : "")}
+                src={img}
+                alt=""
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       {screen !== "mobile" && (
@@ -49,7 +93,33 @@ function Main() {
           >
             {localized("main.details")} <ArrowDown />
           </Button>
-          <img className="bg" src={content.main.img2} alt="" />
+          <Swiper
+            className="slider"
+            speed={1000}
+            modules={[Autoplay, EffectCreative, Controller]}
+            slidesPerView={1}
+            loop={true}
+            allowTouchMove={false}
+            noSwiping={true}
+            keyboard={false}
+            effect={"creative"}
+            creativeEffect={{
+              prev: {
+                shadow: false,
+                translate: ["115%", 0, -200],
+              },
+              next: {
+                translate: [0, 0, -100],
+              },
+            }}
+            onSwiper={(swiper) => (swiper2Ref.current = swiper)}
+          >
+            {content.main.slider2.map((img, index) => (
+              <SwiperSlide key={index}>
+                <img className="bg-image" src={img} alt="" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       )}
     </StyledSection>
@@ -104,10 +174,6 @@ const StyledSection = styled.section`
       text-align: center;
       max-width: 320px;
     }
-
-    .bg {
-      object-position: center 100%;
-    }
   }
 
   .right {
@@ -126,8 +192,31 @@ const StyledSection = styled.section`
     z-index: -1;
   }
 
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    inset: 0;
+    z-index: -1;
+
+    .swiper-slide {
+      transition-timing-function: cubic-bezier(1, 0, 0.1, 1);
+    }
+
+    img.bg-image {
+      width: 100%;
+      height: 100%;
+      transform: scale(1.15);
+    }
+  }
+
+  img.bg-image.butt-text {
+    object-position: center 100%;
+  }
+
   @media screen and (min-width: 1600px) {
-    .left .bg {
+    img.bg-image.butt-text {
       object-position: center 90%;
     }
   }
@@ -139,7 +228,7 @@ const StyledSection = styled.section`
   }
 
   @media screen and (max-width: 959px) {
-    .left .bg {
+    img.bg-image.butt-text {
       transform: scale(1.25) translate(0, -10%);
     }
 

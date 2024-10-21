@@ -1,10 +1,14 @@
 import girls1 from "../assets/img/girls-1-min.jpg";
 import girls2 from "../assets/img/girls-2-min.jpg";
+import girls3 from "../assets/img/girls-3-min.jpg";
+import girls4 from "../assets/img/girls-4-min.jpg";
+import girls5 from "../assets/img/girls-5-min.jpg";
 import products1 from "../assets/img/products-1-min.jpg";
 import products2 from "../assets/img/products-2-min.jpg";
 import products3 from "../assets/img/products-3-min.jpg";
 import products4 from "../assets/img/products-4-min.jpg";
 import products5 from "../assets/img/products-5-min.jpg";
+import products6 from "../assets/img/products-6-min.jpg";
 import workflow from "../assets/img/workflow-min.jpg";
 import leather from "../assets/img/leather-min.jpg";
 import serviceIcon1 from "../assets/icons/search.svg";
@@ -45,6 +49,8 @@ export default {
     details: { ukr: "Детальніше", eng: "More details", href: "#features" },
     img1: girls1,
     img2: products1,
+    slider1: [girls1, girls3, girls4, girls5],
+    slider2: [products1, products2, products3, products6],
   },
 
   features: [
