@@ -106,7 +106,7 @@ function Main() {
             creativeEffect={{
               prev: {
                 shadow: false,
-                translate: ["115%", 0, -200],
+                translate: ["115%", 0, 0],
               },
               next: {
                 translate: [0, 0, -100],
@@ -205,19 +205,23 @@ const StyledSection = styled.section`
     }
 
     img.bg-image {
-      width: 100%;
-      height: 100%;
-      transform: scale(1.15);
+      position: relative;
+      width: 116%;
+      height: 116%;
+      left: -8%;
+      top: -8%;
     }
   }
 
   img.bg-image.butt-text {
-    object-position: center 100%;
+    object-position: center 90%;
+    transform: scale(1.1) translate(0, -10%);
   }
 
   @media screen and (min-width: 1600px) {
     img.bg-image.butt-text {
-      object-position: center 90%;
+      object-position: center 100%;
+      transform: scale(1.1) translate(0, 0);
     }
   }
 
@@ -225,11 +229,15 @@ const StyledSection = styled.section`
     /* margin-top: 56px; */
     height: calc(100vh - 56px);
     min-height: 560px;
+
+    img.bg-image.butt-text {
+      transform: scale(1.1) translate(0, -10%);
+    }
   }
 
   @media screen and (max-width: 959px) {
     img.bg-image.butt-text {
-      transform: scale(1.25) translate(0, -10%);
+      transform: scale(1.1) translate(0, -10%);
     }
 
     .action {
@@ -240,8 +248,8 @@ const StyledSection = styled.section`
   @media screen and (max-width: 719px) {
     min-height: 560px;
 
-    .left .bg {
-      transform: scale(1.5) translate(0, -15%);
+    img.bg-image.butt-text {
+      transform: scale(1.3) translate(0, -16%);
     }
 
     .action {
