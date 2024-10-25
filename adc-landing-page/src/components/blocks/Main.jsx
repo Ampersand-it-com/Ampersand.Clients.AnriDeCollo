@@ -2,7 +2,7 @@ import content from "../../helpers/content";
 import { useLocalization } from "../../helpers/localization";
 import Button from "../ui/Button";
 import ArrowDown from "../../assets/icons/arrow-down.svg?react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { smoothScrollTo } from "../../helpers/common";
 import TitleUkr from "../../assets/svg/title-ukr.svg?react";
 import TitleEng from "../../assets/svg/title-eng.svg?react";
@@ -13,6 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCreative, Controller } from "swiper/modules";
 import "swiper/css";
 import { useRef } from "react";
+import Slider from "../ui/Slider";
 
 function Main() {
   const { locale, localized } = useLocalization();
@@ -47,42 +48,16 @@ function Main() {
             {localized("main.action")}
           </Button>
         </div>
-        <Swiper
-          className="slider"
-          speed={1000}
-          modules={[Autoplay, EffectCreative, Controller]}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          allowTouchMove={false}
-          noSwiping={true}
-          keyboard={false}
-          effect={"creative"}
-          creativeEffect={{
-            prev: {
-              shadow: false,
-              translate: [0, 0, -200],
-            },
-            next: {
-              translate: ["150%", 0, 0],
-            },
-          }}
-          onSwiper={(swiper) => (swiper1Ref.current = swiper)}
-          controller={{ control: swiper2Ref.current }}
-        >
+        <Slider fadeIn={slider1FadeIn} fadeOut={slider1FadeOut}>
           {content.main.slider1.map((img, index) => (
-            <SwiperSlide key={index}>
-              <img
-                className={"bg-image" + (index === 0 ? " butt-text" : "")}
-                src={img}
-                alt=""
-              />
-            </SwiperSlide>
+            <img
+              className={"bg-image" + (index === 0 ? " butt-text" : "")}
+              src={img}
+              alt=""
+              key={index}
+            />
           ))}
-        </Swiper>
+        </Slider>
       </div>
 
       {screen !== "mobile" && (
@@ -106,10 +81,10 @@ function Main() {
             creativeEffect={{
               prev: {
                 shadow: false,
-                translate: ["115%", 0, 0],
+                translate: ["116%", 0, 0],
               },
               next: {
-                translate: [0, 0, -100],
+                translate: [0, 0, -200],
               },
             }}
             onSwiper={(swiper) => (swiper2Ref.current = swiper)}
@@ -125,6 +100,26 @@ function Main() {
     </StyledSection>
   );
 }
+
+const slider1FadeIn = keyframes`
+  from {
+    transform: translate(100%, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+`;
+
+const slider1FadeOut = keyframes`
+  from {
+    transform: scale(100%);
+  }
+
+  to {
+    transform: scale(90%);
+  }
+`;
 
 const StyledSection = styled.section`
   /* margin-top: 72px; */
@@ -201,10 +196,15 @@ const StyledSection = styled.section`
     z-index: -1;
 
     .swiper-slide {
-      transition-timing-function: cubic-bezier(1, 0, 0.1, 1);
+      /* transition-timing-function: cubic-bezier(1, 0, 0.3, 0.7);
+      backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+      will-change: transform; */
     }
 
     img.bg-image {
+      /* width: 100%;
+      height: 100%; */
       position: relative;
       width: 116%;
       height: 116%;
