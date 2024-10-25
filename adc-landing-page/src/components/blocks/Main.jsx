@@ -64,10 +64,10 @@ function Main() {
           creativeEffect={{
             prev: {
               shadow: false,
-              translate: [0, 0, -200],
+              scale: 0.9,
             },
             next: {
-              translate: ["150%", 0, 0],
+              translate: ["108%", 0, 0],
             },
           }}
           onSwiper={(swiper) => (swiper1Ref.current = swiper)}
@@ -102,16 +102,16 @@ function Main() {
             allowTouchMove={false}
             noSwiping={true}
             keyboard={false}
-            effect={"creative"}
+            effect="creative"
             creativeEffect={{
               prev: {
-                shadow: false,
-                translate: ["115%", 0, 0],
+                translate: ["108%", 0, 0],
               },
               next: {
-                translate: [0, 0, -100],
+                scale: 0.9,
               },
             }}
+            slideVisibleClass="swiper-slide-visible"
             onSwiper={(swiper) => (swiper2Ref.current = swiper)}
           >
             {content.main.slider2.map((img, index) => (
@@ -181,6 +181,12 @@ const StyledSection = styled.section`
     flex-direction: column;
     justify-content: end;
     align-items: end;
+
+    .slider {
+      .swiper-slide-prev {
+        z-index: 10 !important;
+      }
+    }
   }
 
   img.bg {
@@ -201,7 +207,7 @@ const StyledSection = styled.section`
     z-index: -1;
 
     .swiper-slide {
-      transition-timing-function: cubic-bezier(1, 0, 0.1, 1);
+      transition-timing-function: cubic-bezier(0.8, 0, 0, 1);
     }
 
     img.bg-image {
