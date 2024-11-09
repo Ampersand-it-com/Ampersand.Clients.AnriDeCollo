@@ -71,7 +71,7 @@ const FeatureContainer = styled.div`
   color: ${colors.bg};
 
   h4 {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
   }
 
   p {

@@ -1,21 +1,28 @@
 import girls1 from "../assets/img/girls-1-min.webp";
 import girls2 from "../assets/img/girls-2-min.jpg";
-import girls3 from "../assets/img/girls-3-min.webp";
-import girls4 from "../assets/img/girls-4-min.webp";
-import girls5 from "../assets/img/girls-5-min.webp";
 import products1 from "../assets/img/products-1-min.jpg";
 import products2 from "../assets/img/products-2-min.jpg";
 import products3 from "../assets/img/products-3-min.jpg";
 import products4 from "../assets/img/products-4-min.jpg";
 import products5 from "../assets/img/products-5-min.jpg";
-import products6 from "../assets/img/products-6-min.jpg";
 import workflow from "../assets/img/workflow-min.jpg";
 import leather from "../assets/img/leather-min.jpg";
 import serviceIcon1 from "../assets/icons/search.svg";
 import serviceIcon2 from "../assets/icons/leather.svg";
 import serviceIcon3 from "../assets/icons/leather-cutter.svg";
 import serviceIcon4 from "../assets/icons/sewing.svg";
-import review1 from "../assets/img/review-1.webp";
+import review1 from "../assets/img/review-01.png";
+import review2 from "../assets/img/review-02.png";
+import review3 from "../assets/img/review-03.png";
+import review4 from "../assets/img/review-04.png";
+import mainGirls1 from "../assets/img/main-girls-01-min.jpg";
+import mainGirls2 from "../assets/img/main-girls-02-min.jpg";
+import mainGirls3 from "../assets/img/main-girls-03-min.jpg";
+import mainGirls4 from "../assets/img/main-girls-04-min.jpg";
+import mainProducts1 from "../assets/img/main-products-01-min.jpg";
+import mainProducts2 from "../assets/img/main-products-02-min.jpg";
+import mainProducts3 from "../assets/img/main-products-03-min.jpg";
+import mainProducts4 from "../assets/img/main-products-04-min.jpg";
 
 export default {
   header: {
@@ -36,7 +43,7 @@ export default {
   },
 
   main: {
-    title: { ukr: "Ваш стиль наш витвір", eng: "Your style our creation" },
+    title: { ukr: "Ваш стиль — Наш витвір", eng: "Your style — Our creation" },
     description: {
       ukr: "Створюємо взуття, яке відповідає вашим найвищим очікуванням",
       eng: "Creating shoes that meet your highest expectations",
@@ -49,15 +56,15 @@ export default {
     details: { ukr: "Детальніше", eng: "More details", href: "#features" },
     img1: girls1,
     img2: products1,
-    slider1: [girls1, girls3, girls4, girls5],
-    slider2: [products1, products2, products3, products6],
+    slider1: [mainGirls1, mainGirls2, mainGirls3, mainGirls4],
+    slider2: [mainProducts1, mainProducts2, mainProducts3, mainProducts4],
   },
 
   features: [
     {
       title: { ukr: "Виробництво “під ключ”", eng: "Turnkey Production" },
       description: {
-        ukr: "Ми надаємо можливість створити взуття під вашим брендом, використовуючи наші готові моделі. Ви можете обрати дизайн, а також внести зміни в матеріали, кольори, підошви та фурнітуру. Це спрощений спосіб започаткувати власний бренд взуття.",
+        ukr: "Ми пропонуємо можливість створити взуття під вашим брендом, використовуючи наші готові моделі. Ви можете обрати дизайн, а також внести зміни в матеріали, кольори, підошви та фурнітуру. Це спрощений спосіб започаткувати власний бренд взуття.",
         eng: "We offer the opportunity to create footwear under your brand using our ready-made models. You can choose the design and make adjustments to the materials, colors, soles, and fittings. This is a simplified way to start your own footwear brand.",
       },
     },
@@ -108,8 +115,8 @@ export default {
         eng: "Anri De Collo specializes in the production of footwear both under its own brand and for other companies. From private clients to large brands, we are a reliable partner for those seeking stable and high-quality production.",
       },
       {
-        ukr: "З кожним роком ми розширюємо можливості нашого виробництва, збільшуємо команду та вдосконалюємо процеси, що дозволяє нам зростати та впевнено рухатися вперед. Незмінними залишаються наша увага до деталей і прагнення до високої якості.",
-        eng: "With each passing year, we expand our production capabilities, grow our team, and improve our processes, which allows us to develop and move confidently forward. Our attention to detail and commitment to high quality remain unchanged.",
+        ukr: "Ми постійно розширюємо можливості нашого виробництва, збільшуємо команду та вдосконалюємо процеси, що дозволяє нам зростати та впевнено рухатися вперед. Незмінними залишаються наша увага до деталей і прагнення до високої якості.",
+        eng: "We continuously expand our production capabilities, grow our team, and improve our processes, which allows us to develop and move confidently forward. Our attention to detail and commitment to high quality remain unchanged.",
       },
       {
         ukr: "Наша місія — створювати взуття, яке підкреслює індивідуальність і просуває українського виробника на світовій арені.",
@@ -130,7 +137,7 @@ export default {
           eng: "High Production Quality",
         },
         description: {
-          ukr: "Ми використовуємо високоякісні штучні та екологічно чисті матеріали, а також здійснюємо ретельний контроль на кожному етапі виробництва, щоб гарантувати створення взуття преміальної якості",
+          ukr: "Ми використовуємо натуральну шкіру, високоякісні штучні та еко матеріали, контролюємо кожний етап виробництва, щоб гарантувати створення взуття найкращої якості",
           eng: "We use high-quality artificial and eco-friendly materials and perform thorough quality control at every stage of production to guarantee premium footwear.",
         },
       },
@@ -189,41 +196,38 @@ export default {
     },
     slides: [
       {
+        icon: serviceIcon2,
+        title: { ukr: "Запропонуємо вибір", eng: "We offer options" },
+        description: {
+          ukr: "Надаємо послуги з виробництва взуття на замовлення та контрактного виробництва з нашого каталогу під вашим брендом.",
+          eng: "We provide custom shoe manufacturing and contract production services from our catalog under your brand.",
+        },
+      },
+      {
         icon: serviceIcon1,
         title: { ukr: "Створимо дизайн", eng: "We create designs" },
         description: {
           ukr: "Відділ Розробки перетворить ваші ідеї в унікальні моделі взуття, що відображають особливість вашого бренду.",
-          eng: "Our Development Department will transform your ideas into unique shoe models that reflect your brand's identity.",
-        },
-      },
-      {
-        icon: serviceIcon2,
-        title: { ukr: "Підберемо матеріали", eng: "We select materials" },
-        description: {
-          ukr: "Володіємо технологіями роботи з будь-яким видом шкіри (натуральна, екошкіра, шкірзамінник).",
-          eng: "We have the expertise to work with any type of leather (natural, eco-leather, synthetic).",
+          eng: "Our Development Department turns your ideas into unique shoe models that capture your brand's uniqueness.",
         },
       },
       {
         icon: serviceIcon3,
-        title: {
-          ukr: "Працюємо комплексно",
-          eng: "We provide comprehensive services",
-        },
+        title: { ukr: "Підберемо матеріали", eng: "We select materials" },
         description: {
-          ukr: "Підберемо необхідні матеріали, фурнітуру та надійних постачальників.",
-          eng: "We select the necessary materials, fittings, and reliable suppliers.",
+          ukr: "Володіємо технологіями роботи з будь-яким видом шкіри — натуральною, екошкірою чи штучною. Підберемо необхідні матеріали, фурнітуру та всі комплектуючі.",
+          eng: "We have expertise in working with all types of leather—natural, eco-leather, and synthetic. We select the right materials, fittings, and components.",
         },
       },
       {
         icon: serviceIcon4,
         title: {
           ukr: "Забезпечимо повний супровід",
-          eng: "We provide full support",
+          eng: "We provide comprehensive support",
         },
         description: {
           ukr: "Надаємо гарантію на нашу продукцію та завжди готові проконсультувати.",
-          eng: "We provide a guarantee on our products and are always ready to offer consultations.",
+          eng: "We offer a warranty on our products and are always available for consultation.",
         },
       },
     ],
@@ -286,40 +290,40 @@ export default {
     title: { ukr: "Відгуки наших клієнтів", eng: "Customer Reviews" },
     slides: [
       {
-        name: { ukr: "Анна Мельник", eng: "Anna Melnyk" },
+        name: { ukr: "Олександра М.", eng: "Alexandra M." },
         role: { ukr: "Покупець", eng: "Customer" },
         review: {
-          ukr: "Дуже задоволена покупкою! Якість взуття перевершила очікування, натуральна шкіра та зручна посадка. Замовлення доставили швидко, сервіс на високому рівні.",
-          eng: "Very satisfied with the purchase! The quality of the shoes exceeded expectations, with genuine leather and a comfortable fit. The order was delivered quickly, and the service was top-notch.",
+          ukr: "Співпраця з Anri De Collo – це справжнє задоволення! Команда забезпечила відмінну якість кожної деталі та оперативно реагувала на всі запити. Наш продукт отримав безліч позитивних відгуків від покупців, і це все завдяки увазі до якості та підтримці з боку Anri De Collo.",
+          eng: "Collaborating with Anri De Collo has been a true pleasure! The team ensured excellent quality in every detail and responded promptly to all requests. Our product received numerous positive reviews from customers, thanks to the attention to quality and support from Anri De Collo.",
         },
         img: review1,
       },
       {
-        name: { ukr: "Анна Мельник", eng: "Anna Melnyk" },
+        name: { ukr: "Дмитро В.", eng: "Dmitry V." },
         role: { ukr: "Покупець", eng: "Customer" },
         review: {
-          ukr: "Дуже задоволена покупкою! Якість взуття перевершила очікування, натуральна шкіра та зручна посадка. Замовлення доставили швидко, сервіс на високому рівні.",
-          eng: "Very satisfied with the purchase! The quality of the shoes exceeded expectations, with genuine leather and a comfortable fit. The order was delivered quickly, and the service was top-notch.",
+          ukr: "Приємно мати справу з виробництвом, яке дійсно турбується про свій продукт і клієнтів. Наш персональний менеджер підтримував нас на кожному етапі, що зробило процес виготовлення максимально прозорим і зручним.",
+          eng: "It's great to work with a manufacturer that truly cares about their product and customers. Our personal manager supported us at every stage, making the production process as transparent and convenient as possible.",
         },
-        img: review1,
+        img: review2,
       },
       {
-        name: { ukr: "Анна Мельник", eng: "Anna Melnyk" },
+        name: { ukr: "Ірина С.", eng: "Iryna S." },
         role: { ukr: "Покупець", eng: "Customer" },
         review: {
-          ukr: "Дуже задоволена покупкою! Якість взуття перевершила очікування, натуральна шкіра та зручна посадка. Замовлення доставили швидко, сервіс на високому рівні.",
-          eng: "Very satisfied with the purchase! The quality of the shoes exceeded expectations, with genuine leather and a comfortable fit. The order was delivered quickly, and the service was top-notch.",
+          ukr: "Вироби Anri De Collo – це справжня якість та стиль. Усі наші замовлення були виконані на найвищому рівні, і ми точно знаємо, що знайти партнера з таким підходом до роботи – велика рідкість.",
+          eng: "Anri De Collo's products are true quality and style. All our orders were executed at the highest level, and we know that finding a partner with such an approach is rare.",
         },
-        img: review1,
+        img: review3,
       },
       {
-        name: { ukr: "Анна Мельник", eng: "Anna Melnyk" },
+        name: { ukr: "Максим Л.", eng: "Maxim L." },
         role: { ukr: "Покупець", eng: "Customer" },
         review: {
-          ukr: "Дуже задоволена покупкою! Якість взуття перевершила очікування, натуральна шкіра та зручна посадка. Замовлення доставили швидко, сервіс на високому рівні.",
-          eng: "Very satisfied with the purchase! The quality of the shoes exceeded expectations, with genuine leather and a comfortable fit. The order was delivered quickly, and the service was top-notch.",
+          ukr: "Команда Anri De Collo дійсно знається на своїй справі! Завжди можна покластися на них в питаннях якості, та й можливість швидкої заміни продукції у разі потреби – величезний плюс.",
+          eng: "The Anri De Collo team really knows their business! You can always rely on them for quality, and the option for a quick product replacement if needed is a huge plus.",
         },
-        img: review1,
+        img: review4,
       },
     ],
   },
@@ -352,6 +356,16 @@ export default {
         description: {
           ukr: "Мінімальне замовлення складає 10 пар одного кольору.",
           eng: "The minimum order is 10 pairs of the same color.",
+        },
+      },
+      {
+        title: {
+          ukr: "Я не розбираюся в типах шкіри, фурнітурі, лекалах, колодках. Чи зможете ви допомогти мені з цим?",
+          eng: "I don't understand the types of leather, fittings, patterns, or lasts. Can you help me with this?",
+        },
+        description: {
+          ukr: "Так, звичайно. Ми завжди на зв'язку, щоб проконсультувати вас щодо вибору відповідно до вашого бюджету та запиту.",
+          eng: "Yes, of course. We are always available to advise you on your choices according to your budget and needs.",
         },
       },
       {
@@ -414,6 +428,16 @@ export default {
           eng: "You can place an order via email or through the form on our website.",
         },
       },
+      {
+        title: {
+          ukr: "Як я можу бути впевнений у якості вашого виробництва заздалегідь, щоб прийняти рішення про співпрацю?",
+          eng: "How can I be sure of the quality of your production beforehand to make a decision about cooperation?",
+        },
+        description: {
+          ukr: "Ми готові надіслати вам зразок нашого взуття з категорії, яка вас цікавить, щоб ви оцінили якість роботи та матеріалів",
+          eng: "We are ready to send you a sample of our footwear from the category you are interested in so you can evaluate the quality of the work and materials.",
+        },
+      },
     ],
   },
 
@@ -448,6 +472,70 @@ export default {
       ],
     ],
   },
+
+  whyUs: {
+    title: {
+      ukr: "Чому обирають нас?",
+      eng: "Why Choose Us?",
+    },
+    pros: {
+      title: {
+        ukr: "Ексклюзивне виробництво Anri De Collo",
+        eng: "Exclusive Production by Anri De Collo",
+      },
+      list: [
+        {
+          ukr: "Ми спеціалізуємось на виробництві невеликих партій — від 10 пар однієї моделі.",
+          eng: "We specialize in small batch production — from 10 pairs of a single model.",
+        },
+        {
+          ukr: "Використовуємо частіше за все натуральну шкіру та інші високоякісні матеріали.",
+          eng: "We mostly use genuine leather and other high-quality materials.",
+        },
+        {
+          ukr: "Підтримуємо клієнтів у створенні унікального дизайну.",
+          eng: "We support clients in creating unique designs.",
+        },
+        {
+          ukr: "Виготовляємо офіційно в Європі.",
+          eng: "Officially manufactured in Europe.",
+        },
+        {
+          ukr: "Забезпечуємо гарантію якості та швидку доставку.",
+          eng: "We ensure quality assurance and fast delivery.",
+        },
+      ],
+    },
+    cons: {
+      title: {
+        ukr: "Масові виробництва з Турції, Китаю, Індонезії",
+        eng: "Mass Production from Turkey, China, Indonesia",
+      },
+      list: [
+        {
+          ukr: "Орієнтовані на великі обсяги виробництва, починаючи від 35 000 одиниць на місяць.",
+          eng: "Focused on large-scale production, starting from 35,000 units per month.",
+        },
+        {
+          ukr: "Економія на матеріалах: використання бюджетної шкіри та фурнітури.",
+          eng: "Cost-cutting on materials: use of budget leather and fittings.",
+        },
+        {
+          ukr: "Співпраця через посередників, що позначається на кінцевій вартості.",
+          eng: "Collaboration through intermediaries, affecting the final cost.",
+        },
+        {
+          ukr: "Тривала та вартісна доставка.",
+          eng: "Long and expensive delivery.",
+        },
+        {
+          ukr: "Часто недостатній рівень англійської, що ускладнює комунікацію і призводить до помилок у замовленні.",
+          eng: "Often insufficient English proficiency, complicating communication and leading to order mistakes.",
+        },
+      ],
+    },
+  },
+
   common: {
     formFeedbackSuccess: {
       ukr: "Дякуємо за звернення 😊",

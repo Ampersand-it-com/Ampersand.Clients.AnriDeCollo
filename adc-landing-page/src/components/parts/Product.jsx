@@ -54,7 +54,7 @@ const ProductContainer = styled.div`
     gap: 12px;
 
     .img-wrapper {
-      aspect-ratio: 1;
+      aspect-ratio: 0.7;
       position: relative;
       background: ${hexa(colors.main, 4)};
       cursor: zoom-in;

@@ -16,10 +16,10 @@ function Products() {
   const id = "products";
   const ref = useSectionObserver(id);
 
-  const handleActionClick = (url, previewUrl) => {
-    // download(url, "catalog");
-    openInNewTab(previewUrl);
-  };
+  // const handleActionClick = (url, previewUrl) => {
+  //   // download(url, "catalog");
+  //   openInNewTab(previewUrl);
+  // };
 
   return (
     <StyledSection id={id} ref={ref}>
@@ -32,7 +32,7 @@ function Products() {
           </a>
         </div>
       </div>
-      {screen === "tablet" && (
+      {/* {screen === "tablet" && (
         <Button
           className="mobile-action"
           onClick={(e) =>
@@ -44,7 +44,7 @@ function Products() {
         >
           {localized("products.action")}
         </Button>
-      )}
+      )} */}
       <div className="products-container no-scrollbar">
         <Gallery
           withCaption
@@ -58,7 +58,7 @@ function Products() {
               text={localized("products.slides." + index + ".caption")}
               key={index}
             >
-              {index == 0 &&
+              {/* {index == 0 &&
                 (screen === "desktop" || screen === "ultrawide") && (
                   <Button
                     onClick={(e) =>
@@ -70,12 +70,12 @@ function Products() {
                   >
                     {localized("products.action")}
                   </Button>
-                )}
+                )} */}
             </Product>
           ))}
         </Gallery>
       </div>
-      {screen === "mobile" && (
+      {/* {screen === "mobile" && (
         <Button
           className="mobile-action"
           onClick={(e) =>
@@ -87,7 +87,7 @@ function Products() {
         >
           {localized("products.action")}
         </Button>
-      )}
+      )} */}
     </StyledSection>
   );
 }
@@ -135,21 +135,19 @@ const StyledSection = styled.section`
           .main {
             align-self: flex-start;
             /* width: calc((100vw - (100px + 3 * 20px)) * 0.25); */
-            width: ${({ theme }) => theme.grid(3)}px;
+            width: ${({ theme }) => theme.grid(4)}px;
+          }
+
+          .img-wrapper {
+            aspect-ratio: 1;
           }
         }
 
         &:nth-child(2) {
           min-width: 40%;
 
-          .main {
-            flex: 1 0 0;
-          }
-
           .img-wrapper {
-            height: auto;
-            flex: 1 0 0;
-            min-height: 0px;
+            aspect-ratio: 1;
           }
         }
       }

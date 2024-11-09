@@ -53,7 +53,9 @@ em {
 }
 
 h2,
-.h2 {
+.h2,
+h1,
+.h1 {
   font-family: "NyghtSerif";
   font-weight: bold;
   font-style: italic;

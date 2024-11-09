@@ -10,12 +10,7 @@ import Switch from "../ui/Switch";
 import { smoothScrollTo } from "../../helpers/common";
 import useResponsive from "../../hooks/useResponsive";
 import { Close, Menu } from "../../assets/icons";
-import { useRef, useState } from "react";
-
-const HeaderWrapper = styled.div`
-  position: relative;
-  height: 72px;
-`;
+import { useState } from "react";
 
 function Header() {
   const screen = useResponsive();
@@ -25,16 +20,6 @@ function Header() {
   const handleMenuButtonClick = () => {
     setMenuIsOpen(menuIsOpen ? false : true);
   };
-
-  // const menuRef = useRef(null);
-  // const handleMenuClick = (e) => {
-  //   if (menuRef.current && e.target === menuRef.current) {
-  //     return;
-  //   } else setMenuIsOpen(false);
-  //   // if (menuRef.current && !menuRef.current.contains(e.target)) {
-  //   //   setMenuIsOpen(false); // Закрываем меню при клике вне
-  //   // }
-  // };
 
   const handleTabClick = (e, href) => {
     e.preventDefault;
@@ -48,7 +33,6 @@ function Header() {
         <div className="left">
           <Logo onClick={(e) => handleTabClick(e, "#main")} />
         </div>
-
         {screen === "desktop" || screen === "ultrawide" ? (
           <HeaderContent handleTabClick={handleTabClick} />
         ) : (
@@ -114,6 +98,46 @@ const StyledHeader = styled.header`
 `;
 
 // Header Content
+
+const CenteredHeaderContent = ({ handleTabClick }) => {
+  const { locale, setLocale, localized } = useLocalization();
+
+  return (
+    <>
+      <Tabs className="tabs">
+        {content.header.navigation.map((el, index) => (
+          <Tab
+            onClick={(e) => handleTabClick(e, el.href)}
+            href={el.href}
+            key={index}
+          >
+            {localized("header.navigation." + index)}
+          </Tab>
+        ))}
+      </Tabs>
+      <div className="left">
+        <Logo onClick={(e) => handleTabClick(e, "#main")} />
+      </div>
+      <div className="right">
+        <Switch
+          className={"switch"}
+          active={locale}
+          setActive={setLocale}
+          options={[
+            { label: localized("header.locale.ukr"), value: "ukr" },
+            { label: localized("header.locale.eng"), value: "eng" },
+          ]}
+        />
+        <Button
+          className="action"
+          onClick={(e) => handleTabClick(e, content.header.action.href)}
+        >
+          {localized("header.action")}
+        </Button>
+      </div>
+    </>
+  );
+};
 
 const HeaderContent = ({ handleTabClick }) => {
   const { locale, setLocale, localized } = useLocalization();

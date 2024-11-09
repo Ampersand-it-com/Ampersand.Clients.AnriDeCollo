@@ -3,6 +3,8 @@ import { useLocalization } from "../../helpers/localization";
 import content from "../../helpers/content";
 import { colors, hexa } from "../../helpers/styleSetup";
 import { useSectionObserver } from "../../helpers/activeNavigation";
+import { openInNewTab } from "../../helpers/common";
+import Button from "../ui/Button";
 
 const Services = () => {
   const { localized } = useLocalization();
@@ -10,13 +12,31 @@ const Services = () => {
   const id = "services";
   const ref = useSectionObserver(id);
 
+  const handleActionClick = (url, previewUrl) => {
+    // download(url, "catalog");
+    openInNewTab(previewUrl);
+  };
+
   return (
     <StyledSection id={id} ref={ref}>
       <h2>{localized("services.title")}</h2>
       <div className="card">
         <div className="text-block">
           <p className="description h3">{localized("services.description")}</p>
-          <p className="caption text">{localized("services.caption")}</p>
+          {/* <p className="caption text">{localized("services.caption")}</p> */}
+
+          <Button
+            className="catalog-button"
+            variant="inverted"
+            onClick={(e) =>
+              handleActionClick(
+                content.products.action.href,
+                content.products.action.previewUrl
+              )
+            }
+          >
+            {localized("products.action")}
+          </Button>
         </div>
         <div className="service-cards">
           {content.services.slides.map((slide, index) => (
@@ -96,6 +116,10 @@ const StyledSection = styled.section`
       h4 {
         flex: 1 0 0;
       }
+    }
+
+    .catalog-button {
+      align-self: flex-start;
     }
   }
 

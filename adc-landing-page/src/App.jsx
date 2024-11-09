@@ -18,6 +18,7 @@ import Contact from "./components/blocks/Contact";
 import Reviews from "./components/blocks/Reviews";
 import Footer from "./components/blocks/Footer";
 import FAQ from "./components/blocks/FAQ";
+import WhyUs from "./components/blocks/WhyUs";
 
 function App() {
   // Locale
@@ -37,6 +38,7 @@ function App() {
         <Benefits />
         <Services />
         <Products />
+        <WhyUs />
         <Contact />
         <Reviews />
         <FAQ />
