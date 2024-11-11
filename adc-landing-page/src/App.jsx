@@ -21,12 +21,6 @@ import FAQ from "./components/blocks/FAQ";
 import WhyUs from "./components/blocks/WhyUs";
 
 function App() {
-  // Locale
-  const { setLocale } = useLocalization();
-  useEffect(() => {
-    setLocale("ukr");
-  }, [setLocale]);
-
   return (
     <AppContainer className="app">
       <Header />

@@ -1,10 +1,18 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import content from "./content";
 
 const LocalizationContext = createContext();
 
 export const LocalizationProvider = ({ children }) => {
-  const [locale, setLocale] = useState("eng");
+  // Init with localstorage
+  const [locale, setLocale] = useState(
+    () => localStorage.getItem("locale") || "ukr"
+  );
+
+  // Update localstorage
+  useEffect(() => {
+    localStorage.setItem("locale", locale);
+  }, [locale]);
 
   const localized = (path) => {
     // Get value by given path

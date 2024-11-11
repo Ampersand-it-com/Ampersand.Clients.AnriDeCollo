@@ -111,12 +111,21 @@ const buttText = css`
 
 const textOverlay = css`
   .right .bg-image {
-    object-position: center 100%;
+    object-position: center center;
   }
 
   @media screen and (min-width: 1600px) {
     .right .bg-image {
-      object-position: center 90%;
+      object-position: center 60%;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .right .bg-image {
+      position: relative;
+      width: 130% !important;
+      left: -15% !important;
+      object-position: center bottom;
     }
   }
 `;
@@ -160,6 +169,7 @@ const StyledSection = styled.section`
 
     .swiper-slide {
       transition-timing-function: cubic-bezier(0.8, 0, 0, 1);
+      overflow: hidden;
     }
 
     img.bg-image {
@@ -189,6 +199,7 @@ const StyledSection = styled.section`
 
   @media screen and (max-width: 719px) {
     min-height: 560px;
+    height: initial;
 
     .action {
       align-self: stretch;

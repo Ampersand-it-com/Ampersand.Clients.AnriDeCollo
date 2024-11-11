@@ -19,10 +19,10 @@ import mainGirls1 from "../assets/img/main-girls-01-min.jpg";
 import mainGirls2 from "../assets/img/main-girls-02-min.jpg";
 import mainGirls3 from "../assets/img/main-girls-03-min.jpg";
 import mainGirls4 from "../assets/img/main-girls-04-min.jpg";
-import mainProducts1 from "../assets/img/main-products-01-min.jpg";
-import mainProducts2 from "../assets/img/main-products-02-min.jpg";
-import mainProducts3 from "../assets/img/main-products-03-min.jpg";
-import mainProducts4 from "../assets/img/main-products-04-min.jpg";
+import mainProducts1 from "../assets/img/main-product-01-min.jpg";
+import mainProducts2 from "../assets/img/main-product-02-min.jpg";
+import mainProducts3 from "../assets/img/main-product-03-min.jpg";
+import mainProducts4 from "../assets/img/main-product-04-min.jpg";
 
 export default {
   header: {
@@ -43,7 +43,7 @@ export default {
   },
 
   main: {
-    title: { ukr: "Ваш стиль — Наш витвір", eng: "Your style — Our creation" },
+    title: { ukr: "Ваш стиль — Наш витвір", eng: "Your style — Our creation" },
     description: {
       ukr: "Створюємо взуття, яке відповідає вашим найвищим очікуванням",
       eng: "Creating shoes that meet your highest expectations",
