@@ -66,6 +66,7 @@ const FeatureContainer = styled.div`
   justify-content: space-between;
   padding: var(--padding-l);
   gap: var(--padding-m);
+  min-height: 280px;
 
   background: ${colors.primary};
   color: ${colors.bg};

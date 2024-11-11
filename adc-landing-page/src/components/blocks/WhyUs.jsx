@@ -14,8 +14,10 @@ function WhyUs() {
     <StyledSection id={id}>
       <h2>{localized("whyUs.title")}</h2>
       <div className="row">
-        <Tile>
-          <h3>{localized("whyUs.pros.title")}</h3>
+        <Tile className="tile">
+          <h3
+            dangerouslySetInnerHTML={{ __html: localized("whyUs.pros.title") }}
+          />
           <List>
             {content.whyUs.pros.list.map((el, index) => (
               <ListItem key={index}>
@@ -26,7 +28,7 @@ function WhyUs() {
           </List>
         </Tile>
 
-        <Tile>
+        <Tile className="tile">
           <h3>{localized("whyUs.cons.title")}</h3>
           <List>
             {content.whyUs.cons.list.map((el, index) => (
@@ -66,6 +68,12 @@ const StyledSection = styled.section`
     & > * {
       flex: 1 0 0;
       min-width: 300px;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    .tile h3 {
+      min-height: 3lh;
     }
   }
 `;

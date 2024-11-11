@@ -31,60 +31,57 @@ function Main() {
   const [whiteSlide, setWhiteSlide] = useState(false);
 
   const handleSlideChange = (swiper) => {
-    console.log(swiper.realIndex);
     setWhiteSlide(swiper.realIndex === 1 ? true : false);
   };
 
   return (
     <StyledSection id={id} ref={ref}>
-      <div className="left">
-        <Swiper
-          {...sliderConfig}
-          creativeEffect={effect1}
-          onSwiper={(swiper) => (swiper1Ref.current = swiper)}
-          controller={{ control: swiper2Ref.current }}
-        >
-          {content.main.slider1.map((img, index) => (
-            <SwiperSlide key={index}>
-              <img className={"bg-image"} src={img} alt="" />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
       {screen !== "mobile" && (
-        <div className="right">
-          <USP $whiteSlide={whiteSlide}>
-            <div className="text-block">
-              <h1 className="title">{localized("main.title")}</h1>
-              <p className="description lead">
-                {localized("main.description")}
-              </p>
-            </div>
-            <Button
-              className="action"
-              onClick={() => handleButtonClick(content.main.action.href)}
-              variant={whiteSlide ? "inverted" : "default"}
-            >
-              {localized("main.action")}
-            </Button>
-          </USP>
+        <div className="left">
           <Swiper
             {...sliderConfig}
-            creativeEffect={effect2}
             autoplay={false}
-            slideVisibleClass="swiper-slide-visible"
-            onSwiper={(swiper) => (swiper2Ref.current = swiper)}
-            onSlideChange={handleSlideChange}
+            creativeEffect={effect1}
+            onSwiper={(swiper) => (swiper1Ref.current = swiper)}
           >
-            {content.main.slider2.map((img, index) => (
+            {content.main.slider1.map((img, index) => (
               <SwiperSlide key={index}>
-                <img className="bg-image" src={img} alt="" />
+                <img className={"bg-image"} src={img} alt="" />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       )}
+
+      <div className="right">
+        <USP $whiteSlide={whiteSlide}>
+          <div className="text-block">
+            <h1 className="title">{localized("main.title")}</h1>
+            <p className="description lead">{localized("main.description")}</p>
+          </div>
+          <Button
+            className="action"
+            onClick={() => handleButtonClick(content.main.action.href)}
+            variant={whiteSlide ? "inverted" : "default"}
+          >
+            {localized("main.action")}
+          </Button>
+        </USP>
+        <Swiper
+          {...sliderConfig}
+          creativeEffect={effect2}
+          slideVisibleClass="swiper-slide-visible"
+          onSwiper={(swiper) => (swiper2Ref.current = swiper)}
+          controller={{ control: swiper1Ref.current }}
+          onSlideChange={handleSlideChange}
+        >
+          {content.main.slider2.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img className="bg-image" src={img} alt="" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </StyledSection>
   );
 }
@@ -110,12 +107,26 @@ const buttText = css`
   }
 `;
 
+// Fix text on image overlay
+
+const textOverlay = css`
+  .right .bg-image {
+    object-position: center 100%;
+  }
+
+  @media screen and (min-width: 1600px) {
+    .right .bg-image {
+      object-position: center 90%;
+    }
+  }
+`;
+
 // Style
 
 const StyledSection = styled.section`
   /* margin-top: 72px; */
-  /* min-height: 720px; */
-  /* height: calc(100vh - 72px); */
+  min-height: 720px;
+  height: calc(100vh - 72px);
 
   display: flex;
   flex-direction: row;
@@ -183,6 +194,8 @@ const StyledSection = styled.section`
       align-self: stretch;
     }
   }
+
+  ${textOverlay}
 `;
 
 // USP
@@ -216,7 +229,7 @@ const USP = styled.div`
     font-weight: 500;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 960px) {
     .title {
       font-size: min(55px, calc((100vw - 4 * var(--padding-xl)) * 0.04));
     }

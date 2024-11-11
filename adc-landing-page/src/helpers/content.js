@@ -1,10 +1,10 @@
 import girls1 from "../assets/img/girls-1-min.webp";
 import girls2 from "../assets/img/girls-2-min.jpg";
-import products1 from "../assets/img/products-1-min.jpg";
-import products2 from "../assets/img/products-2-min.jpg";
-import products3 from "../assets/img/products-3-min.jpg";
+import products1 from "../assets/img/products-7-min.jpg";
+import products2 from "../assets/img/products-1-min.jpg";
+import products3 from "../assets/img/products-8-min.jpg";
 import products4 from "../assets/img/products-4-min.jpg";
-import products5 from "../assets/img/products-5-min.jpg";
+import products5 from "../assets/img/products-9-min.jpg";
 import workflow from "../assets/img/workflow-min.jpg";
 import leather from "../assets/img/leather-min.jpg";
 import serviceIcon1 from "../assets/icons/search.svg";
@@ -247,15 +247,15 @@ export default {
     slides: [
       {
         img: products1,
-        caption: { ukr: "Кросівки", eng: "Sneakers" },
+        caption: { ukr: "Туфлі", eng: "Shoes" },
       },
       {
         img: products2,
-        caption: { ukr: "Чоботи зі шнурівкою", eng: "Lace-up boots" },
+        caption: { ukr: "Кросівки", eng: "Sneakers" },
       },
       {
         img: products3,
-        caption: { ukr: "Ботфорти", eng: "Over-the-knee boots" },
+        caption: { ukr: "Чоботи", eng: "Boots" },
       },
       {
         img: products4,
@@ -263,7 +263,7 @@ export default {
       },
       {
         img: products5,
-        caption: { ukr: "Сандалі", eng: "Sandals" },
+        caption: { ukr: "Босоніжки", eng: "Sandals" },
       },
     ],
   },
@@ -480,8 +480,8 @@ export default {
     },
     pros: {
       title: {
-        ukr: "Ексклюзивне виробництво Anri De Collo",
-        eng: "Exclusive Production by Anri De Collo",
+        ukr: "Ексклюзивне виробництво\nAnri De Collo",
+        eng: "Exclusive Production\nby Anri De Collo",
       },
       list: [
         {
@@ -508,7 +508,7 @@ export default {
     },
     cons: {
       title: {
-        ukr: "Масові виробництва з Турції, Китаю, Індонезії",
+        ukr: "Масові виробництва з Турції, Китаю, Індонезії",
         eng: "Mass Production from Turkey, China, Indonesia",
       },
       list: [

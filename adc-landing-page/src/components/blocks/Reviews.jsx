@@ -25,8 +25,6 @@ const Reviews = () => {
   const ref = useSectionObserver(id);
 
   const swiperRef = useRef(null);
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
 
   return (
     <StyledSection id={id} ref={ref}>
@@ -49,23 +47,10 @@ const Reviews = () => {
       </div>
       <Swiper
         className="slider"
-        modules={[Navigation, Autoplay]}
-        spaceBetween={20}
-        speed={1000}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: true,
-        }}
+        {...sliderConfig}
         slidesPerView={screen === "mobile" ? 1 : screen === "tablet" ? 2 : 3}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
-          setIsBeginning(swiper.isBeginning);
-          setIsEnd(swiper.isEnd);
-        }}
-        onSlideChange={(swiper) => {
-          setIsBeginning(swiper.isBeginning);
-          setIsEnd(swiper.isEnd);
         }}
       >
         {content.reviews.slides.map((slide, index) => (
@@ -84,6 +69,21 @@ const Reviews = () => {
     </StyledSection>
   );
 };
+
+// Slider config
+
+const sliderConfig = {
+  modules: [Navigation, Autoplay],
+  spaceBetween: 20,
+  speed: 1000,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: true,
+  },
+};
+
+// Style
 
 const StyledSection = styled.section`
   display: flex;
@@ -108,6 +108,13 @@ const StyledSection = styled.section`
     overflow: visible;
 
     .swiper-wrapper {
+      display: flex !important;
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      height: initial;
+      display: flex;
     }
   }
 
@@ -120,7 +127,7 @@ const StyledSection = styled.section`
   }
 `;
 
-// Benefit
+// Review
 
 const Review = ({ img, name, role, review }) => (
   <ReviewContainer>
@@ -141,6 +148,10 @@ const Review = ({ img, name, role, review }) => (
 );
 
 const ReviewContainer = styled.div`
+  min-height: 280px;
+  width: 100%;
+  min-width: 0;
+
   display: flex;
   flex-direction: column;
   padding: var(--padding-m);
@@ -149,10 +160,11 @@ const ReviewContainer = styled.div`
   background: ${colors.tile};
 
   & > .main {
+    flex: 1 0 0;
+
     display: flex;
     flex-direction: row;
     gap: var(--gap-m);
-    min-height: 5lh;
 
     .icon-container {
       color: ${colors.primary};

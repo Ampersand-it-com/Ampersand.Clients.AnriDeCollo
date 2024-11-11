@@ -12,10 +12,13 @@ export const LocalizationProvider = ({ children }) => {
     const value = keys.reduce((obj, key) => obj?.[key], content);
 
     // Find end string
-    const endValue =
+    let endValue =
       typeof value === "string"
         ? value
         : value[locale] || Object.values(value)[0];
+
+    // Handle line breaks
+    endValue = endValue.replace(/\n/g, "<br>");
 
     return endValue;
   };
