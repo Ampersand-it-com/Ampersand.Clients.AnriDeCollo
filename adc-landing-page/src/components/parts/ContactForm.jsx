@@ -60,7 +60,7 @@ const ContactForm = ({ setStatus, ...props }) => {
           name="name"
           placeholder={localized("contact.form.name")}
           required
-          pattern="[A-Za-z]{2,}"
+          pattern="[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,}"
           title="Name should be at least 2 characters and contain only letters."
           autoComplete="given-name"
           value={inputName}
@@ -71,7 +71,7 @@ const ContactForm = ({ setStatus, ...props }) => {
           required
           id="inputSurname"
           name="surname"
-          pattern="[A-Za-z]{2,}"
+          pattern="[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]{2,}"
           title="Name should be at least 2 characters and contain only letters."
           autoComplete="family-name"
           value={inputSurname}
