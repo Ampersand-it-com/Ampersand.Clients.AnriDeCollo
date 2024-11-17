@@ -19,27 +19,26 @@ const ContactForm = ({ setStatus, ...props }) => {
     console.log("form submitted");
 
     // prepare data
-    const body = {
-      email: inputEmail,
-      firstname: inputName,
-      lastname: inputSurname,
-      subject: "Request from user",
-      data: inputMessage,
-      messagetemplateid: "contactus",
+      const body = {
+          emailTo: ['anridecollo@gmaiwl.com', 'support@anridecollo.com'],
+          clientId:"anridecollo",
+          clientSecret:"&*envo9SG82jmd-0jHn2;lwcf",
+          contactEmail: inputEmail,
+          contactFirstName: inputName,
+          contactLastName: inputSurname,
+          contactMessagee: inputMessage,
     };
 
     // setup request
-    fetch("https://api.ampersand-it.com/api/smtp/send", {
+      fetch("https://email.ampersand-it.com/sendcontactusform", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Client-Id": authData.ClientId,
-        "Client-Secret": authData.clientSecret,
       },
       body: JSON.stringify(body),
     })
-      .then((response) => response.json())
-      .then((data) => {
+        .then((data) => {
+          console.log(data)
         if (data.status === 200) {
           setStatus("success");
         } else {
