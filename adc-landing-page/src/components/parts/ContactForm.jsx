@@ -20,12 +20,13 @@ const ContactForm = ({ setStatus, ...props }) => {
 
     // prepare data
       const body = {
-          emailTo: ['anridecollo@gmaiwl.com', 'support@anridecollo.com'],
+          emailTo: ['anridecollo@gmail.com', 'support@anridecollo.com'],
           clientId:"anridecollo",
           clientSecret:"&*envo9SG82jmd-0jHn2;lwcf",
           contactEmail: inputEmail,
           contactFirstName: inputName,
           contactLastName: inputSurname,
+          includeSystemInfo: true,
           contactMessagee: inputMessage,
     };
 
